@@ -1,0 +1,945 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>João Guilherme Trovão da Silva — Currículo</title>
+<script>document.documentElement.classList.add('js');</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#FAFAF8;
+    --paper:#FFFFFF;
+    --text:#17181C;
+    --muted:#65686F;
+    --line:#E1E0DA;
+    --accent:#1F3A5F;
+    --accent-soft:#EDF1F6;
+    --shadow: 0 1px 0 rgba(0,0,0,0.03);
+  }
+  html.dark{
+    --bg:#0C0D10;
+    --paper:#101215;
+    --text:#ECECE8;
+    --muted:#93969E;
+    --line:#24262B;
+    --accent:#8FB2DD;
+    --accent-soft:#182333;
+    --shadow: none;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth; max-width:100%; overflow-x:hidden;}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--text);
+    font-family:'Inter', sans-serif;
+    line-height:1.6;
+    transition:background .35s ease, color .35s ease;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+    max-width:100%;
+  }
+
+  /* ---- scroll progress ---- */
+  .scroll-progress{
+    position:fixed;
+    top:0; left:0;
+    height:2px;
+    width:0%;
+    background:var(--accent);
+    z-index:60;
+    transition:width .08s linear;
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    *, *::before, *::after{animation:none !important; transition:none !important;}
+  }
+  .wrap{
+    max-width:740px;
+    margin:0 auto;
+    padding:0 max(28px, env(safe-area-inset-left)) 120px max(28px, env(safe-area-inset-left));
+    padding-right:max(28px, env(safe-area-inset-right));
+  }
+  .mono{font-family:'IBM Plex Mono', monospace;}
+
+  /* ---- top bar ---- */
+  .topbar{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    max-width:740px;
+    margin:0 auto;
+    padding:max(28px, env(safe-area-inset-top)) max(28px, env(safe-area-inset-right)) 0 max(28px, env(safe-area-inset-left));
+    gap:12px;
+  }
+  .brand-mark{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px;
+    letter-spacing:.14em;
+    color:var(--muted);
+    text-transform:uppercase;
+  }
+  .toggle{
+    position:relative;
+    overflow:hidden;
+    display:flex;
+    align-items:center;
+    gap:8px;
+    border:1px solid var(--line);
+    background:var(--paper);
+    color:var(--text);
+    border-radius:100px;
+    padding:6px 14px 6px 10px;
+    cursor:pointer;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11px;
+    letter-spacing:.06em;
+    text-transform:uppercase;
+    transition:border-color .25s ease, transform .25s ease;
+  }
+  .toggle::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:radial-gradient(90px circle at var(--mx,50%) var(--my,50%), var(--accent-soft), transparent 70%);
+    opacity:0;
+    transition:opacity .3s ease;
+  }
+  .toggle:hover{border-color:var(--accent); transform:translateY(-1px);}
+  .toggle:hover::before{opacity:1;}
+  .toggle:active{transform:scale(.96);}
+  .toggle{touch-action:manipulation;}
+  .toggle svg{width:14px;height:14px;stroke:var(--accent); position:relative; transition:transform .4s cubic-bezier(.34,1.56,.64,1);}
+  .toggle svg.spin{transform:rotate(180deg);}
+  .toggle span{position:relative;}
+
+  /* ---- buttons / cta row ---- */
+  .cta-row{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    margin-top:20px;
+  }
+  .btn{
+    position:relative;
+    overflow:hidden;
+    display:inline-flex;
+    align-items:center;
+    gap:7px;
+    padding:10px 16px;
+    border:1px solid var(--line);
+    border-radius:8px;
+    background:var(--paper);
+    color:var(--text);
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11.5px;
+    letter-spacing:.04em;
+    text-transform:uppercase;
+    text-decoration:none;
+    cursor:pointer;
+    transition:border-color .25s ease, color .25s ease, transform .25s ease, background .25s ease;
+  }
+  .btn::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:radial-gradient(120px circle at var(--mx,50%) var(--my,50%), var(--accent-soft), transparent 70%);
+    opacity:0;
+    transition:opacity .3s ease;
+  }
+  .btn:hover{border-color:var(--accent); color:var(--accent); transform:translateY(-1px);}
+  .btn:hover::before{opacity:1;}
+  .btn:active{transform:scale(.97);}
+  .btn{touch-action:manipulation;}
+  .btn svg{width:13px;height:13px; position:relative;}
+  .btn span{position:relative;}
+  .btn.primary{background:var(--accent); border-color:var(--accent); color:var(--paper);}
+  .btn.primary:hover{color:var(--paper); opacity:.9;}
+  .btn.primary::before{background:radial-gradient(120px circle at var(--mx,50%) var(--my,50%), rgba(255,255,255,.18), transparent 70%);}
+
+  /* ---- header ---- */
+  header.hero{
+    padding-top:64px;
+    margin-bottom:56px;
+  }
+  @keyframes rise{
+    from{opacity:0; transform:translateY(16px);}
+    to{opacity:1; transform:translateY(0);}
+  }
+  .eyebrow{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px;
+    letter-spacing:.16em;
+    text-transform:uppercase;
+    color:var(--accent);
+    margin-bottom:18px;
+    animation:rise .6s cubic-bezier(.16,.84,.44,1) both;
+    animation-delay:.05s;
+  }
+  h1{
+    font-family:'Fraunces', serif;
+    font-weight:500;
+    font-size:clamp(32px, 8vw, 54px);
+    line-height:1.08;
+    margin:0 0 6px;
+    letter-spacing:-.01em;
+    overflow-wrap:break-word;
+    animation:rise .7s cubic-bezier(.16,.84,.44,1) both;
+    animation-delay:.15s;
+  }
+  h1 em{font-style:italic; color:var(--accent); font-weight:400;}
+  .role-line{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:13px;
+    color:var(--muted);
+    letter-spacing:.02em;
+    margin:18px 0 22px;
+    max-width:520px;
+    animation:rise .6s cubic-bezier(.16,.84,.44,1) both;
+    animation-delay:.28s;
+  }
+  .contact-row{
+    display:flex;
+    flex-wrap:wrap;
+    gap:0;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12.5px;
+    color:var(--muted);
+    border-top:1px solid var(--line);
+    border-bottom:1px solid var(--line);
+    padding:14px 0;
+    animation:rise .6s cubic-bezier(.16,.84,.44,1) both;
+    animation-delay:.38s;
+  }
+  .contact-row a{color:var(--text); text-decoration:none; border-bottom:1px solid var(--line); transition:color .2s ease, border-color .2s ease; overflow-wrap:anywhere;}
+  .contact-row a:hover{border-color:var(--accent); color:var(--accent);}
+  .contact-row span:not(:last-child)::after{
+    content:"·";
+    margin:0 12px;
+    color:var(--line);
+  }
+  .cta-row{animation:rise .6s cubic-bezier(.16,.84,.44,1) both; animation-delay:.48s;}
+
+  /* ---- stat strip ---- */
+  .stats{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    margin-top:32px;
+  }
+  .stats{animation:rise .6s cubic-bezier(.16,.84,.44,1) both; animation-delay:.58s;}
+  .stat{
+    padding:16px 18px 0 0;
+    border-left:1px solid var(--line);
+    padding-left:18px;
+    transition:transform .25s ease;
+  }
+  .stat:hover{transform:translateY(-2px);}
+  .stat:first-child{border-left:none; padding-left:0;}
+  .stat .num{
+    font-family:'Fraunces', serif;
+    font-size:30px;
+    color:var(--accent);
+    line-height:1;
+    transition:color .25s ease;
+  }
+  .stat .label{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11px;
+    color:var(--muted);
+    text-transform:uppercase;
+    letter-spacing:.06em;
+    margin-top:8px;
+  }
+
+  /* ---- section framing ---- */
+  section{margin-top:64px;}
+  .sec-head{
+    display:flex;
+    align-items:baseline;
+    gap:12px;
+    margin-bottom:26px;
+  }
+  .sec-index{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px;
+    color:var(--accent);
+  }
+  .sec-title{
+    font-family:'Fraunces', serif;
+    font-size:22px;
+    font-weight:500;
+    letter-spacing:-.01em;
+  }
+  .sec-rule{
+    flex:1;
+    height:1px;
+    background:var(--line);
+  }
+
+  .lede{
+    color:var(--text);
+    font-size:15.5px;
+    max-width:640px;
+  }
+  .lede .muted{color:var(--muted);}
+
+  /* ---- competencies ---- */
+  .comp-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:10px 28px;
+  }
+  .comp-item{
+    display:flex;
+    justify-content:space-between;
+    gap:12px;
+    padding:10px 12px;
+    margin:0 -12px;
+    border-bottom:1px solid var(--line);
+    border-radius:6px;
+    font-size:14px;
+    transition:background .25s ease, padding-left .25s ease;
+  }
+  .comp-item:hover{background:var(--accent-soft); padding-left:18px;}
+  .comp-item .tag{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:10.5px;
+    color:var(--muted);
+    white-space:nowrap;
+  }
+
+  /* ---- ledger / experience ---- */
+  .ledger{
+    position:relative;
+    padding-left:26px;
+  }
+  .ledger::before{
+    content:"";
+    position:absolute;
+    left:0; top:0;
+    width:1px;
+    height:100%;
+    background:var(--line);
+  }
+  .entry{
+    position:relative;
+    padding-bottom:38px;
+  }
+  .entry:last-child{padding-bottom:0;}
+  .entry::before{
+    content:"";
+    position:absolute;
+    left:-30px;
+    top:6px;
+    width:7px;
+    height:7px;
+    border-radius:50%;
+    background:var(--accent);
+    transition:box-shadow .25s ease;
+  }
+  .entry:hover::before{box-shadow:0 0 0 4px var(--accent-soft);}
+  .entry-title{transition:color .2s ease;}
+  .entry:hover .entry-title{color:var(--accent);}
+  .entry-date{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11.5px;
+    color:var(--accent);
+    text-transform:uppercase;
+    letter-spacing:.04em;
+    margin-bottom:6px;
+  }
+  .entry-title{
+    font-family:'Fraunces', serif;
+    font-size:19px;
+    font-weight:500;
+    margin:0 0 2px;
+  }
+  .entry-org{
+    font-size:13.5px;
+    color:var(--muted);
+    margin-bottom:12px;
+    overflow-wrap:break-word;
+  }
+  .entry ul{
+    margin:0;
+    padding-left:18px;
+    font-size:14px;
+  }
+  .entry li{margin-bottom:6px; color:var(--text);}
+  .entry li::marker{color:var(--line);}
+
+  /* ---- education / certs ---- */
+  .two-col{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:36px;
+  }
+  .card-title{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11px;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+    color:var(--muted);
+    margin-bottom:14px;
+  }
+  .edu-item{border-bottom:1px solid var(--line); padding:12px 0; transition:padding-left .25s ease;}
+  .edu-item:first-child{padding-top:0;}
+  .edu-item:hover{padding-left:8px;}
+  .edu-name{font-family:'Fraunces', serif; font-size:16px; margin-bottom:3px;}
+  .edu-when{font-family:'IBM Plex Mono', monospace; font-size:11.5px; color:var(--muted);}
+  .cert-list{list-style:none; margin:0; padding:0;}
+  .cert-list li{
+    padding:12px 0;
+    border-bottom:1px solid var(--line);
+    font-size:14px;
+    display:flex;
+    gap:10px;
+    transition:padding-left .25s ease;
+  }
+  .cert-list li:hover{padding-left:8px;}
+  .cert-list li:first-child{padding-top:0;}
+  .cert-list .mark{color:var(--accent); display:flex; align-items:center; transition:transform .3s cubic-bezier(.34,1.56,.64,1);}
+  .cert-list .mark svg{width:16px;height:16px;}
+  .cert-list li:hover .mark{transform:scale(1.2);}
+
+  /* ---- perfil / radar ---- */
+  .profile-grid{
+    display:grid;
+    grid-template-columns:280px 1fr;
+    gap:36px;
+    align-items:center;
+  }
+  .radar-box{display:flex; justify-content:center;}
+  .radar{width:100%; max-width:280px; overflow:visible;}
+  .radar .ring{fill:none; stroke:var(--line); stroke-width:1;}
+  .radar .spoke{stroke:var(--line); stroke-width:1;}
+  .radar .data{
+    fill:var(--accent-soft);
+    stroke:var(--accent);
+    stroke-width:1.6;
+    stroke-linejoin:round;
+  }
+  .radar .pt{
+    fill:var(--accent);
+  }
+  .radar .axis-label{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:9.5px;
+    fill:var(--muted);
+    text-transform:uppercase;
+    letter-spacing:.03em;
+  }
+  .qual-list{list-style:none; margin:18px 0 0; padding:0;}
+  .qual-list li{
+    display:flex;
+    justify-content:space-between;
+    gap:16px;
+    padding:9px 0;
+    border-bottom:1px solid var(--line);
+    font-size:13.5px;
+  }
+  .qual-list li:first-child{padding-top:0;}
+  .qual-name{color:var(--text); font-weight:500;}
+  .qual-note{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11px;
+    color:var(--muted);
+    text-align:right;
+  }
+
+  /* ---- ferramentas ---- */
+  .tool-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:20px 28px;
+  }
+  .tool-item{
+    display:flex;
+    gap:14px;
+    padding:16px 0;
+    border-bottom:1px solid var(--line);
+    transition:padding-left .25s ease;
+  }
+  .tool-item:hover{padding-left:6px;}
+  .tool-icon{
+    flex-shrink:0;
+    width:34px;
+    height:34px;
+    border:1px solid var(--line);
+    border-radius:8px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:var(--accent);
+    transition:border-color .25s ease, transform .35s cubic-bezier(.34,1.56,.64,1);
+  }
+  .tool-item:hover .tool-icon{border-color:var(--accent); transform:rotate(-6deg) scale(1.08);}
+  .tool-icon svg{width:17px;height:17px;}
+  .tool-name{font-size:14px; font-weight:500; margin-bottom:2px;}
+  .tool-note{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:10.5px;
+    color:var(--muted);
+    margin-bottom:8px;
+  }
+  .dots{display:flex; gap:5px;}
+  .dot{
+    width:8px; height:8px; border-radius:50%; background:var(--line);
+    transition:background .25s ease;
+  }
+  .dot.on{background:var(--accent);}
+
+  /* ---- footer ---- */
+  footer{
+    margin-top:80px;
+    padding-top:26px;
+    border-top:1px solid var(--line);
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:14px;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11.5px;
+    color:var(--muted);
+  }
+  footer a{color:var(--accent); text-decoration:none;}
+
+  @media (max-width:640px){
+    .wrap{padding:0 20px 90px;}
+    .topbar{padding:20px 20px 0;}
+    header.hero{padding-top:40px; margin-bottom:40px;}
+    h1{font-size:clamp(30px, 9vw, 44px);}
+    .role-line{font-size:12px;}
+    .contact-row{font-size:11.5px; gap:4px 0;}
+    .contact-row span:not(:last-child)::after{margin:0 8px;}
+    .cta-row{flex-direction:column;}
+    .btn{width:100%; justify-content:center; padding:13px 16px;}
+    .toggle{padding:9px 14px 9px 12px;}
+    section{margin-top:48px;}
+    .sec-title{font-size:19px;}
+    .comp-grid{grid-template-columns:1fr;}
+    .two-col{grid-template-columns:1fr; gap:28px;}
+    .tool-grid{grid-template-columns:1fr;}
+    .profile-grid{grid-template-columns:1fr; gap:28px;}
+    .radar-box{max-width:240px; margin:0 auto;}
+    .qual-list li{flex-direction:column; align-items:flex-start; gap:2px;}
+    .qual-note{text-align:left;}
+    .stats{grid-template-columns:1fr; row-gap:14px;}
+    .stat{border-left:none; padding-left:0; border-top:1px solid var(--line); padding-top:14px;}
+    .stat:first-child{border-top:none; padding-top:0;}
+    .ledger{padding-left:22px;}
+    .entry::before{left:-26px;}
+    .entry-title{font-size:17px;}
+    footer{flex-direction:column; align-items:flex-start; gap:8px;}
+  }
+
+  @media (max-width:400px){
+    .eyebrow{font-size:11px; letter-spacing:.12em;}
+    h1{font-size:clamp(26px, 10vw, 36px);}
+    .stat .num{font-size:26px;}
+    .radar-box{max-width:210px;}
+    .radar .axis-label{font-size:8.5px;}
+  }
+
+  @media (hover:none) and (pointer:coarse){
+    .btn, .toggle{min-height:44px;}
+    .comp-item, .entry, .tool-item, .edu-item, .cert-list li{-webkit-tap-highlight-color:transparent;}
+    .comp-item:active{background:var(--accent-soft); padding-left:18px;}
+    .entry:active .entry-title{color:var(--accent);}
+    .entry:active::before{box-shadow:0 0 0 4px var(--accent-soft);}
+    .tool-item:active .tool-icon{border-color:var(--accent); transform:scale(1.05);}
+    .cert-list li:active .mark{transform:scale(1.15);}
+    .edu-item:active{padding-left:8px;}
+    .stat:active{transform:translateY(-2px);}
+  }
+
+  @media (max-width:360px){
+    .wrap{padding-left:16px; padding-right:16px;}
+    .topbar{padding-left:16px; padding-right:16px;}
+    .eyebrow{font-size:10px;}
+    h1{font-size:clamp(26px, 9vw, 32px);}
+    .sec-title{font-size:17px;}
+    .entry-title{font-size:16px;}
+    .stat .num{font-size:22px;}
+    .stat .label{font-size:10px;}
+    .radar-box{max-width:180px;}
+    .radar .axis-label{font-size:7.5px;}
+    .btn{font-size:11px; padding:12px 14px;}
+  }
+</style>
+</head>
+<body>
+
+<div class="scroll-progress" id="scrollProgress"></div>
+
+<div class="topbar">
+  <div class="brand-mark">JGTS / CV</div>
+  <button class="toggle" id="themeToggle" aria-label="Alternar tema">
+    <svg id="toggleIcon" viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"></circle><line x1="12" y1="1.5" x2="12" y2="4"></line><line x1="12" y1="20" x2="12" y2="22.5"></line><line x1="4.2" y1="4.2" x2="6" y2="6"></line><line x1="18" y1="18" x2="19.8" y2="19.8"></line><line x1="1.5" y1="12" x2="4" y2="12"></line><line x1="20" y1="12" x2="22.5" y2="12"></line><line x1="4.2" y1="19.8" x2="6" y2="18"></line><line x1="18" y1="6" x2="19.8" y2="4.2"></line></svg>
+    <span id="toggleLabel">Escuro</span>
+  </button>
+</div>
+
+<div class="wrap">
+
+  <header class="hero">
+    <div class="eyebrow">Currículo · Pinhais, Paraná, Brasil</div>
+    <h1>João Guilherme<br><em>Trovão da Silva</em></h1>
+    <div class="role-line">Análise Financeira — Fluxo de Caixa — Indicadores e Relatórios Gerenciais</div>
+    <div class="contact-row">
+      <span><a href="tel:+5541998546728">(41) 99854-6728</a></span>
+      <span><a href="mailto:joao.guilherme.ts16@gmail.com">joao.guilherme.ts16@gmail.com</a></span>
+      <span>LinkedIn</span>
+      <span>Pinhais, PR</span>
+    </div>
+
+    <div class="cta-row">
+      <button class="btn primary" id="copyEmailBtn" type="button">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="M3 7l9 6 9-6"></path></svg>
+        <span id="copyEmailLabel">Copiar e-mail</span>
+      </button>
+      <button class="btn" id="printBtn" type="button">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9V3h12v6"></path><rect x="4" y="9" width="16" height="8" rx="1"></rect><path d="M6 15h12v6H6z"></path></svg>
+        <span>Baixar em PDF</span>
+      </button>
+    </div>
+
+    <div class="stats">
+      <div class="stat">
+        <div class="num">05</div>
+        <div class="label">Experiências profissionais</div>
+      </div>
+      <div class="stat">
+        <div class="num">03</div>
+        <div class="label">Sistemas — Sankhya, Conta Azul, TR</div>
+      </div>
+      <div class="stat">
+        <div class="num">2027</div>
+        <div class="label">Conclusão — Gestão Financeira</div>
+      </div>
+    </div>
+  </header>
+
+  <section id="resumo">
+    <div class="sec-head">
+      <span class="sec-index">§ 01</span>
+      <span class="sec-title">Resumo profissional</span>
+      <span class="sec-rule"></span>
+    </div>
+    <p class="lede">
+      Profissional da área financeira com experiência em contas a pagar, contas a receber, análise de crédito e risco, conciliação bancária e controle de fluxo de caixa, em busca de posição como <strong>Analista Financeiro</strong>. Atuação no suporte à gestão financeira por meio da estruturação de indicadores, comparativos entre projeção e realizado e relatórios gerenciais, transformando dados operacionais em informações estratégicas para a tomada de decisão.
+      <span class="muted">Perfil analítico, organizado e orientado a resultados, com domínio de Excel avançado (tabelas dinâmicas e fórmulas) e experiência no relacionamento entre os setores financeiro e contábil. Atualmente cursando Tecnólogo em Gestão Financeira na Faculdade Descomplica, com conclusão prevista para 2027.</span>
+    </p>
+  </section>
+
+  <section id="perfil">
+    <div class="sec-head">
+      <span class="sec-index">§ 02</span>
+      <span class="sec-title">Perfil comportamental</span>
+      <span class="sec-rule"></span>
+    </div>
+    <div class="profile-grid">
+      <div class="radar-box">
+        <svg viewBox="0 0 280 260" class="radar" role="img" aria-label="Gráfico de radar do perfil comportamental">
+          <polygon class="ring" points="140,40 235.1,109.1 198.8,220.9 81.2,220.9 44.9,109.1"></polygon>
+          <polygon class="ring" points="140,65 211.3,116.8 184.1,200.7 95.9,200.7 68.7,116.8"></polygon>
+          <polygon class="ring" points="140,90 187.6,124.6 169.4,180.5 110.6,180.5 92.5,124.6"></polygon>
+          <polygon class="ring" points="140,115 163.8,132.3 154.7,160.2 125.3,160.2 116.2,132.3"></polygon>
+          <line class="spoke" x1="140" y1="140" x2="140" y2="40"></line>
+          <line class="spoke" x1="140" y1="140" x2="235.1" y2="109.1"></line>
+          <line class="spoke" x1="140" y1="140" x2="198.8" y2="220.9"></line>
+          <line class="spoke" x1="140" y1="140" x2="81.2" y2="220.9"></line>
+          <line class="spoke" x1="140" y1="140" x2="44.9" y2="109.1"></line>
+          <polygon class="data" points="140,45 227.5,111.6 191.7,211.2 91.8,206.3 48.7,110.3"></polygon>
+          <circle class="pt" cx="140" cy="45" r="3"></circle>
+          <circle class="pt" cx="227.5" cy="111.6" r="3"></circle>
+          <circle class="pt" cx="191.7" cy="211.2" r="3"></circle>
+          <circle class="pt" cx="91.8" cy="206.3" r="3"></circle>
+          <circle class="pt" cx="48.7" cy="110.3" r="3"></circle>
+          <text class="axis-label" x="140" y="16" text-anchor="middle">Organização</text>
+          <text class="axis-label" x="258" y="99" text-anchor="start">Perfil analítico</text>
+          <text class="axis-label" x="214" y="240" text-anchor="start">Orientação a resultados</text>
+          <text class="axis-label" x="66" y="240" text-anchor="end">Comunicação fin.-contábil</text>
+          <text class="axis-label" x="22" y="99" text-anchor="end">Atenção a detalhes</text>
+        </svg>
+      </div>
+      <div class="profile-copy">
+        <p class="lede" style="max-width:none;">
+          Autoavaliação com base na atuação diária em rotinas financeiras: organização de dados, leitura analítica de indicadores e comunicação entre os setores financeiro e contábil.
+        </p>
+        <ul class="qual-list">
+          <li><span class="qual-name">Organização</span><span class="qual-note">estruturação de planilhas e controles</span></li>
+          <li><span class="qual-name">Perfil analítico</span><span class="qual-note">leitura de dados para decisão</span></li>
+          <li><span class="qual-name">Orientação a resultados</span><span class="qual-note">redução de retrabalho e erros</span></li>
+          <li><span class="qual-name">Comunicação financeiro-contábil</span><span class="qual-note">integração entre setores</span></li>
+          <li><span class="qual-name">Atenção a detalhes</span><span class="qual-note">precisão em conciliação e fluxo de caixa</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="competencias">
+    <div class="sec-head">
+      <span class="sec-index">§ 03</span>
+      <span class="sec-title">Principais competências</span>
+      <span class="sec-rule"></span>
+    </div>
+    <div class="comp-grid">
+      <div class="comp-item"><span>Análise Financeira</span><span class="tag">core</span></div>
+      <div class="comp-item"><span>Análise de Crédito e Risco</span><span class="tag">core</span></div>
+      <div class="comp-item"><span>Comparativo Projeção x Realizado</span><span class="tag">core</span></div>
+      <div class="comp-item"><span>Relatórios Gerenciais e KPIs</span><span class="tag">core</span></div>
+      <div class="comp-item"><span>Fluxo de Caixa</span><span class="tag">core</span></div>
+      <div class="comp-item"><span>Conciliação Bancária</span><span class="tag">core</span></div>
+      <div class="comp-item"><span>Contas a Pagar e a Receber</span><span class="tag">rotina</span></div>
+      <div class="comp-item"><span>Cobrança Estratégica</span><span class="tag">rotina</span></div>
+      <div class="comp-item"><span>Lançamentos Contábeis</span><span class="tag">rotina</span></div>
+    </div>
+  </section>
+
+  <section id="ferramentas">
+    <div class="sec-head">
+      <span class="sec-index">§ 04</span>
+      <span class="sec-title">Ferramentas &amp; métodos</span>
+      <span class="sec-rule"></span>
+    </div>
+    <div class="tool-grid">
+      <div class="tool-item">
+        <div class="tool-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="3" y1="15" x2="21" y2="15"></line><line x1="9" y1="3" x2="9" y2="21"></line><line x1="15" y1="3" x2="15" y2="21"></line></svg></div>
+        <div class="tool-info">
+          <div class="tool-name">Excel Avançado</div>
+          <div class="tool-note">Tabelas dinâmicas e fórmulas</div>
+          <div class="dots"><span class="dot on"></span><span class="dot on"></span><span class="dot on"></span><span class="dot on"></span></div>
+        </div>
+      </div>
+      <div class="tool-item">
+        <div class="tool-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="8" ry="3"></ellipse><path d="M4 5v14c0 1.7 3.6 3 8 3s8-1.3 8-3V5"></path><path d="M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"></path></svg></div>
+        <div class="tool-info">
+          <div class="tool-name">ERP Sankhya</div>
+          <div class="tool-note">Rotinas financeiras diárias</div>
+          <div class="dots"><span class="dot on"></span><span class="dot on"></span><span class="dot on"></span><span class="dot"></span></div>
+        </div>
+      </div>
+      <div class="tool-item">
+        <div class="tool-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="14" rx="2"></rect><path d="M2 10h20"></path><circle cx="17" cy="14" r="1.3"></circle></svg></div>
+        <div class="tool-info">
+          <div class="tool-name">Conta Azul</div>
+          <div class="tool-note">Gestão financeira e contábil</div>
+          <div class="dots"><span class="dot on"></span><span class="dot on"></span><span class="dot on"></span><span class="dot"></span></div>
+        </div>
+      </div>
+      <div class="tool-item">
+        <div class="tool-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18"></path><path d="M5 7h14"></path><path d="M5 7l-3 6a3 3 0 0 0 6 0z"></path><path d="M19 7l-3 6a3 3 0 0 0 6 0z"></path></svg></div>
+        <div class="tool-info">
+          <div class="tool-name">Sistemas Thomson Reuters</div>
+          <div class="tool-note">Suporte fiscal e contábil</div>
+          <div class="dots"><span class="dot on"></span><span class="dot on"></span><span class="dot on"></span><span class="dot on"></span></div>
+        </div>
+      </div>
+      <div class="tool-item">
+        <div class="tool-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><circle cx="12" cy="12" r="5"></circle><circle cx="12" cy="12" r="1"></circle></svg></div>
+        <div class="tool-info">
+          <div class="tool-name">Lean Six Sigma — White Belt</div>
+          <div class="tool-note">Padronização de processos</div>
+          <div class="dots"><span class="dot on"></span><span class="dot on"></span><span class="dot"></span><span class="dot"></span></div>
+        </div>
+      </div>
+      <div class="tool-item">
+        <div class="tool-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2 6 6 2-6 2-2 6-2-6-6-2 6-2z"></path></svg></div>
+        <div class="tool-info">
+          <div class="tool-name">IA aplicada a processos</div>
+          <div class="tool-note">Redução de tarefas manuais</div>
+          <div class="dots"><span class="dot on"></span><span class="dot on"></span><span class="dot on"></span><span class="dot"></span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="experiencia">
+    <div class="sec-head">
+      <span class="sec-index">§ 05</span>
+      <span class="sec-title">Experiência profissional</span>
+      <span class="sec-rule"></span>
+    </div>
+
+    <div class="ledger">
+      <div class="entry">
+        <div class="entry-date">Maio 2026 — Atual</div>
+        <div class="entry-title">Assistente Financeiro Júnior</div>
+        <div class="entry-org">Innove Soluções Empresariais — Pinhais, PR</div>
+        <ul>
+          <li>Responsável pelos processos financeiros de contas a pagar e receber, conciliação bancária, fluxo de caixa e emissão de relatórios gerenciais.</li>
+          <li>Otimização de planilhas de controle, com formatação, tabelas dinâmicas e fórmulas alinhadas às regras de negócio.</li>
+          <li>Padronização de processos, reduzindo retrabalho e minimizando erros operacionais.</li>
+          <li>Elaboração de comparativos entre projeção e realizado, apoiando o acompanhamento de desvios.</li>
+          <li>Estruturação de indicadores e relatórios com foco em visão gerencial.</li>
+          <li>Aplicação de ferramentas de IA na melhoria de processos financeiros, reduzindo tarefas manuais.</li>
+        </ul>
+      </div>
+
+      <div class="entry">
+        <div class="entry-date">Set 2024 — Mai 2026 · 1 ano e 9 meses</div>
+        <div class="entry-title">Assistente Financeiro</div>
+        <div class="entry-org">Jandira Alimentos — Brasil</div>
+        <ul>
+          <li>Atuação em análise de crédito e risco, contas a receber, contas a pagar e conciliação bancária.</li>
+          <li>Controle e acompanhamento de fluxo de caixa, análise de inadimplência e cobrança estratégica.</li>
+          <li>Organização e registro de lançamentos contábeis para suporte à tomada de decisão.</li>
+          <li>Elaboração de relatórios gerenciais e apoio em auditorias.</li>
+        </ul>
+      </div>
+
+      <div class="entry">
+        <div class="entry-date">Fev 2024 — Mar 2024 · 2 meses</div>
+        <div class="entry-title">Estagiário de Garantia da Qualidade</div>
+        <div class="entry-org">Inventus Power — Manaus, AM</div>
+        <ul>
+          <li>Testes de confiabilidade elétricos e mecânicos em componentes eletrônicos, conforme especificações técnicas dos clientes.</li>
+          <li>Metalografia (Cross Section) em soldagem de componentes SMT e PTH.</li>
+          <li>Análise de falhas e elaboração de relatórios técnicos, com acompanhamento de auditorias em laboratório.</li>
+        </ul>
+      </div>
+
+      <div class="entry">
+        <div class="entry-date">Jan 2022 — Jan 2023 · 1 ano e 1 mês</div>
+        <div class="entry-title">Assistente Administrativo</div>
+        <div class="entry-org">I3M Engenharia — Manaus, AM</div>
+      </div>
+
+      <div class="entry">
+        <div class="entry-date">Mar 2020 — Mar 2021 · 1 ano e 1 mês</div>
+        <div class="entry-title">Estagiário</div>
+        <div class="entry-org">Instituto Federal do Amazonas (IFAM) — Manaus, AM</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="formacao">
+    <div class="sec-head">
+      <span class="sec-index">§ 06</span>
+      <span class="sec-title">Formação e certificações</span>
+      <span class="sec-rule"></span>
+    </div>
+    <div class="two-col">
+      <div>
+        <div class="card-title">Formação acadêmica</div>
+        <div class="edu-item">
+          <div class="edu-name">Tecnólogo em Gestão Financeira</div>
+          <div class="edu-when">Faculdade Descomplica · Ago 2026 — Ago 2027</div>
+        </div>
+        <div class="edu-item">
+          <div class="edu-name">Técnico em Mecânica — Manutenção Mecânica</div>
+          <div class="edu-when">IFAM · 2018 — 2020</div>
+        </div>
+      </div>
+      <div>
+        <div class="card-title">Certificações</div>
+        <ul class="cert-list">
+          <li><span class="mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M8.5 12.5l2.3 2.3L16 10"></path></svg></span> Regimes Tributários na Prática</li>
+          <li><span class="mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M8.5 12.5l2.3 2.3L16 10"></path></svg></span> Lean Six Sigma — White Belt</li>
+          <li><span class="mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M8.5 12.5l2.3 2.3L16 10"></path></svg></span> Excel do Básico ao Avançado: Excel Extremo</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <span>© 2026 João Guilherme Trovão da Silva</span>
+    <span><a href="mailto:joao.guilherme.ts16@gmail.com">joao.guilherme.ts16@gmail.com</a> · (41) 99854-6728</span>
+  </footer>
+
+</div>
+
+<script>
+  const root = document.documentElement;
+  const btn = document.getElementById('themeToggle');
+  const label = document.getElementById('toggleLabel');
+  const icon = document.getElementById('toggleIcon');
+
+  const moonPath = '<path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a7 7 0 0 0 10.5 10.5z"></path>';
+  const sunPaths = document.getElementById('toggleIcon').innerHTML;
+
+  function applyTheme(mode){
+    if(mode === 'dark'){
+      root.classList.add('dark');
+      icon.innerHTML = moonPath;
+      label.textContent = 'Claro';
+    } else {
+      root.classList.remove('dark');
+      icon.innerHTML = sunPaths;
+      label.textContent = 'Escuro';
+    }
+  }
+
+  let saved = null;
+  try { saved = localStorage.getItem('cv-theme'); } catch(e) {}
+  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  applyTheme(saved || (prefersDark ? 'dark' : 'light'));
+
+  btn.addEventListener('click', () => {
+    const next = root.classList.contains('dark') ? 'light' : 'dark';
+    applyTheme(next);
+    try { localStorage.setItem('cv-theme', next); } catch(e) {}
+    icon.classList.toggle('spin');
+  });
+
+  /* ---- scroll progress bar ---- */
+  const progressBar = document.getElementById('scrollProgress');
+  function updateProgress(){
+    const h = document.documentElement;
+    const scrolled = h.scrollTop;
+    const max = h.scrollHeight - h.clientHeight;
+    const pct = max > 0 ? (scrolled / max) * 100 : 0;
+    progressBar.style.width = pct + '%';
+  }
+  window.addEventListener('scroll', updateProgress, { passive: true });
+  updateProgress();
+
+  /* ---- button spotlight (cursor-follow) ---- */
+  document.querySelectorAll('.btn, .toggle').forEach(el => {
+    el.addEventListener('mousemove', (e) => {
+      const rect = el.getBoundingClientRect();
+      el.style.setProperty('--mx', (e.clientX - rect.left) + 'px');
+      el.style.setProperty('--my', (e.clientY - rect.top) + 'px');
+    });
+  });
+
+  /* ---- copy email ---- */
+  const copyBtn = document.getElementById('copyEmailBtn');
+  const copyLabel = document.getElementById('copyEmailLabel');
+  if (copyBtn) {
+    copyBtn.addEventListener('click', async () => {
+      const email = 'joao.guilherme.ts16@gmail.com';
+      try {
+        await navigator.clipboard.writeText(email);
+      } catch (e) {
+        const ta = document.createElement('textarea');
+        ta.value = email;
+        document.body.appendChild(ta);
+        ta.select();
+        try { document.execCommand('copy'); } catch (err) {}
+        document.body.removeChild(ta);
+      }
+      const original = copyLabel.textContent;
+      copyLabel.textContent = 'E-mail copiado ✓';
+      copyBtn.style.opacity = '.85';
+      setTimeout(() => {
+        copyLabel.textContent = original;
+        copyBtn.style.opacity = '';
+      }, 2200);
+    });
+  }
+
+  /* ---- print / download as PDF ---- */
+  const printBtn = document.getElementById('printBtn');
+  if (printBtn) {
+    printBtn.addEventListener('click', () => window.print());
+  }
+</script>
+
+</body>
+</html>
