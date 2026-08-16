@@ -552,26 +552,44 @@
     gap:36px;
     align-items:center;
   }
-  .radar-box{display:flex; justify-content:center;}
-  .radar{width:100%; max-width:280px; overflow:visible;}
+  .profile-grid>*{min-width:0;}
+  .radar-box{display:flex; justify-content:center; position:relative;}
+  .radar{width:100%; max-width:280px; overflow:visible; touch-action:manipulation;}
   .radar .ring{fill:none; stroke:var(--line); stroke-width:1;}
-  .radar .spoke{stroke:var(--line); stroke-width:1;}
+  .radar .spoke{stroke:var(--line); stroke-width:1; transition:stroke .2s ease;}
+  .radar .spoke.active{stroke:var(--accent);}
   .radar .data{
     fill:var(--accent-soft);
     stroke:var(--accent);
     stroke-width:1.6;
     stroke-linejoin:round;
+    transition:fill .2s ease;
   }
   .radar .pt{
     fill:var(--accent);
+    cursor:pointer;
+    transition:r .15s ease;
   }
+  .radar .pt:hover, .radar .pt.active{r:5.5;}
   .radar .axis-label{
     font-family:'IBM Plex Mono', monospace;
     font-size:9.5px;
     fill:var(--muted);
     text-transform:uppercase;
     letter-spacing:.03em;
+    cursor:pointer;
+    transition:fill .2s ease, font-weight .2s ease;
   }
+  .radar .axis-label.active{fill:var(--accent); font-weight:600;}
+  .radar-tip{
+    position:absolute; left:0; top:0;
+    transform:translate(-50%,-125%);
+    background:var(--paper); border:1px solid var(--line); border-radius:6px;
+    padding:4px 9px; font-family:'IBM Plex Mono', monospace; font-size:11px;
+    color:var(--text); white-space:nowrap; pointer-events:none;
+    opacity:0; transition:opacity .15s ease; z-index:5;
+  }
+  .radar-tip.show{opacity:1;}
   .qual-list{list-style:none; margin:18px 0 0; padding:0;}
   .qual-list li{
     display:flex;
@@ -832,28 +850,29 @@
     </div>
     <div class="profile-grid">
       <div class="radar-box">
-        <svg viewBox="0 0 280 260" class="radar" role="img" aria-label="Gráfico de radar do perfil comportamental">
-          <polygon class="ring" points="140,40 235.1,109.1 198.8,220.9 81.2,220.9 44.9,109.1"></polygon>
-          <polygon class="ring" points="140,65 211.3,116.8 184.1,200.7 95.9,200.7 68.7,116.8"></polygon>
-          <polygon class="ring" points="140,90 187.6,124.6 169.4,180.5 110.6,180.5 92.5,124.6"></polygon>
-          <polygon class="ring" points="140,115 163.8,132.3 154.7,160.2 125.3,160.2 116.2,132.3"></polygon>
-          <line class="spoke" x1="140" y1="140" x2="140" y2="40"></line>
-          <line class="spoke" x1="140" y1="140" x2="235.1" y2="109.1"></line>
-          <line class="spoke" x1="140" y1="140" x2="198.8" y2="220.9"></line>
-          <line class="spoke" x1="140" y1="140" x2="81.2" y2="220.9"></line>
-          <line class="spoke" x1="140" y1="140" x2="44.9" y2="109.1"></line>
-          <polygon class="data" points="140,45 227.5,111.6 191.7,211.2 91.8,206.3 48.7,110.3"></polygon>
-          <circle class="pt" cx="140" cy="45" r="3"></circle>
-          <circle class="pt" cx="227.5" cy="111.6" r="3"></circle>
-          <circle class="pt" cx="191.7" cy="211.2" r="3"></circle>
-          <circle class="pt" cx="91.8" cy="206.3" r="3"></circle>
-          <circle class="pt" cx="48.7" cy="110.3" r="3"></circle>
-          <text class="axis-label" x="140" y="16" text-anchor="middle">Organização</text>
-          <text class="axis-label" x="258" y="99" text-anchor="start">Perfil analítico</text>
-          <text class="axis-label" x="214" y="240" text-anchor="start">Orientação a resultados</text>
-          <text class="axis-label" x="66" y="240" text-anchor="end">Comunicação fin.-contábil</text>
-          <text class="axis-label" x="22" y="99" text-anchor="end">Atenção a detalhes</text>
+        <svg viewBox="0 0 340 300" class="radar" role="img" aria-label="Gráfico de radar do perfil comportamental">
+          <polygon class="ring" points="170,60 255.6,122.2 222.9,222.8 117.1,222.8 84.4,122.2"></polygon>
+          <polygon class="ring" points="170,82.5 234.2,129.1 209.7,204.6 130.3,204.6 105.8,129.1"></polygon>
+          <polygon class="ring" points="170,105 212.8,136.1 196.5,186.4 143.5,186.4 127.2,136.1"></polygon>
+          <polygon class="ring" points="170,127.5 191.4,143.05 183.2,168.2 156.8,168.2 148.6,143.05"></polygon>
+          <line class="spoke" x1="170" y1="150" x2="170" y2="60"></line>
+          <line class="spoke" x1="170" y1="150" x2="255.6" y2="122.2"></line>
+          <line class="spoke" x1="170" y1="150" x2="222.9" y2="222.8"></line>
+          <line class="spoke" x1="170" y1="150" x2="117.1" y2="222.8"></line>
+          <line class="spoke" x1="170" y1="150" x2="84.4" y2="122.2"></line>
+          <polygon class="data" points="170,64.5 248.8,124.4 216.6,214.1 126.6,209.7 87.8,123.3"></polygon>
+          <circle class="pt" data-name="Organização" data-val="95" cx="170" cy="64.5" r="3"></circle>
+          <circle class="pt" data-name="Perfil analítico" data-val="92" cx="248.8" cy="124.4" r="3"></circle>
+          <circle class="pt" data-name="Orientação a resultados" data-val="88" cx="216.6" cy="214.1" r="3"></circle>
+          <circle class="pt" data-name="Comunicação fin.-contábil" data-val="82" cx="126.6" cy="209.7" r="3"></circle>
+          <circle class="pt" data-name="Atenção a detalhes" data-val="96" cx="87.8" cy="123.3" r="3"></circle>
+          <text class="axis-label" x="170" y="44" text-anchor="middle">Organização</text>
+          <text class="axis-label" x="270.8" y="117.25" text-anchor="start"><tspan x="270.8" dy="0">Perfil</tspan><tspan x="270.8" dy="11">analítico</tspan></text>
+          <text class="axis-label" x="232.3" y="235.75" text-anchor="start"><tspan x="232.3" dy="0">Orientação a</tspan><tspan x="232.3" dy="11">resultados</tspan></text>
+          <text class="axis-label" x="107.7" y="235.75" text-anchor="end"><tspan x="107.7" dy="0">Comunicação</tspan><tspan x="107.7" dy="11">fin.-contábil</tspan></text>
+          <text class="axis-label" x="69.2" y="117.25" text-anchor="end"><tspan x="69.2" dy="0">Atenção a</tspan><tspan x="69.2" dy="11">detalhes</tspan></text>
         </svg>
+        <div class="radar-tip" id="radarTip"></div>
       </div>
       <div class="profile-copy">
         <p class="lede" style="max-width:none;">
@@ -1122,6 +1141,59 @@
       }, 2200);
     });
   }
+
+  /* ---- radar chart interactivity ---- */
+  (function(){
+    const box = document.querySelector('.radar-box');
+    const tip = document.getElementById('radarTip');
+    const pts = Array.from(document.querySelectorAll('.radar .pt'));
+    const labels = Array.from(document.querySelectorAll('.radar .axis-label'));
+    const spokes = Array.from(document.querySelectorAll('.radar .spoke'));
+    let hideTimer;
+    function activate(i, anchorEl){
+      pts.forEach(p=>p.classList.remove('active'));
+      labels.forEach(l=>l.classList.remove('active'));
+      spokes.forEach(s=>s.classList.remove('active'));
+      pts[i].classList.add('active');
+      labels[i].classList.add('active');
+      if(spokes[i]) spokes[i].classList.add('active');
+      const br = box.getBoundingClientRect();
+      const ar = anchorEl.getBoundingClientRect();
+      tip.style.left = (ar.left + ar.width/2 - br.left) + 'px';
+      tip.style.top = (ar.top - br.top) + 'px';
+      tip.textContent = pts[i].dataset.name + ' · ' + pts[i].dataset.val + '%';
+      tip.classList.add('show');
+    }
+    function deactivate(){
+      pts.forEach(p=>p.classList.remove('active'));
+      labels.forEach(l=>l.classList.remove('active'));
+      spokes.forEach(s=>s.classList.remove('active'));
+      tip.classList.remove('show');
+    }
+    pts.forEach((pt,i)=>{
+      pt.addEventListener('mouseenter', ()=>activate(i, pt));
+      pt.addEventListener('mouseleave', deactivate);
+      pt.addEventListener('touchstart', (e)=>{
+        e.preventDefault();
+        clearTimeout(hideTimer);
+        activate(i, pt);
+        hideTimer = setTimeout(deactivate, 2000);
+      }, {passive:false});
+    });
+    labels.forEach((lb,i)=>{
+      lb.addEventListener('mouseenter', ()=>activate(i, pts[i]));
+      lb.addEventListener('mouseleave', deactivate);
+      lb.addEventListener('touchstart', (e)=>{
+        e.preventDefault();
+        clearTimeout(hideTimer);
+        activate(i, pts[i]);
+        hideTimer = setTimeout(deactivate, 2000);
+      }, {passive:false});
+    });
+    document.addEventListener('touchstart', (e)=>{
+      if(!box.contains(e.target)){ clearTimeout(hideTimer); deactivate(); }
+    }, {passive:true});
+  })();
 
   /* ---- print / download as PDF ---- */
   const printBtn = document.getElementById('printBtn');
