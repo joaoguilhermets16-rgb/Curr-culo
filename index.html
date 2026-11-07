@@ -4,1204 +4,1111 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>João Guilherme Trovão da Silva — Currículo</title>
-<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📈</text></svg>">
-<script>document.documentElement.classList.add('js');</script>
+<meta name="description" content="Analista financeiro com foco em tecnologia: criação de sistemas que substituem planilhas e aumentam a produtividade de processos financeiros.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22><rect width=%2232%22 height=%2232%22 rx=%228%22 fill=%22%232563eb%22/><text x=%2216%22 y=%2221.5%22 font-family=%22Arial%22 font-weight=%22700%22 font-size=%2214%22 fill=%22white%22 text-anchor=%22middle%22>JG</text></svg>">
+<script>
+  (function(){
+    var t=null; try{t=localStorage.getItem('cv-theme');}catch(e){}
+    if(t==='dark'||(!t&&window.matchMedia('(prefers-color-scheme: dark)').matches)) document.documentElement.classList.add('dark');
+  })();
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
+  /* ─────────────────────────────────────────────────────────────
+     Paleta — mesma família do Sistema Financeiro:
+     slate/zinc como base, azul "brand" para ação e destaque,
+     emerald/rose/amber só para status.
+     ───────────────────────────────────────────────────────────── */
   :root{
-    --bg:#FAFAF8;
-    --paper:#FFFFFF;
-    --text:#17181C;
-    --muted:#65686F;
-    --line:#E1E0DA;
-    --accent:#1F3A5F;
-    --accent-soft:#EDF1F6;
-    --shadow: 0 1px 0 rgba(0,0,0,0.03);
+    --bg:#F8FAFC;           /* slate-50  */
+    --card:#FFFFFF;
+    --border:#E2E8F0;       /* slate-200 */
+    --border-soft:#EEF2F6;
+    --text:#0F172A;         /* slate-900 */
+    --text-2:#334155;       /* slate-700 */
+    --muted:#64748B;        /* slate-500 */
+    --faint:#94A3B8;        /* slate-400 */
+    --brand:#2563EB;        /* brand-600 */
+    --brand-strong:#1D4ED8; /* brand-700 */
+    --brand-text:#1D4ED8;
+    --brand-soft:#EFF6FF;   /* brand-50  */
+    --brand-line:#BFDBFE;   /* brand-200 */
+    --emerald:#059669; --emerald-soft:#ECFDF5;
+    --rose:#E11D48;    --rose-soft:#FFF1F2;
+    --amber:#D97706;   --amber-soft:#FFFBEB;
+    --side:#0F172A;         /* barra lateral (slate-900) */
+    --side-2:#1E293B;       /* slate-800 */
+    --side-line:#1E293B;
+    --side-text:#E2E8F0;
+    --side-muted:#94A3B8;
+    --shadow:0 1px 2px rgba(15,23,42,.04), 0 1px 3px rgba(15,23,42,.04);
+    --shadow-lg:0 10px 30px -12px rgba(15,23,42,.18);
+    --radius:16px;
   }
   html.dark{
-    --bg:#0C0D10;
-    --paper:#101215;
-    --text:#ECECE8;
-    --muted:#93969E;
-    --line:#24262B;
-    --accent:#8FB2DD;
-    --accent-soft:#182333;
-    --shadow: none;
+    --bg:#09090B;           /* zinc-950 */
+    --card:#18181B;         /* zinc-900 */
+    --border:#27272A;       /* zinc-800 */
+    --border-soft:#202024;
+    --text:#F1F5F9;
+    --text-2:#CBD5E1;
+    --muted:#94A3B8;
+    --faint:#64748B;
+    --brand:#3B82F6;
+    --brand-strong:#2563EB;
+    --brand-text:#93C5FD;
+    --brand-soft:rgba(59,130,246,.12);
+    --brand-line:rgba(59,130,246,.35);
+    --emerald:#34D399; --emerald-soft:rgba(16,185,129,.12);
+    --rose:#FB7185;    --rose-soft:rgba(244,63,94,.12);
+    --amber:#FBBF24;   --amber-soft:rgba(245,158,11,.12);
+    --side:#0B0B0E;
+    --side-2:#18181B;
+    --side-line:#27272A;
+    --shadow:none;
+    --shadow-lg:0 10px 30px -12px rgba(0,0,0,.6);
   }
+
   *{box-sizing:border-box;}
-  html{scroll-behavior:smooth; max-width:100%; overflow-x:hidden;}
+  html{scroll-behavior:smooth; -webkit-text-size-adjust:100%;}
   body{
     margin:0;
     background:var(--bg);
     color:var(--text);
-    font-family:'Inter', sans-serif;
+    font-family:'Inter', system-ui, sans-serif;
+    font-size:15px;
     line-height:1.6;
-    transition:background .35s ease, color .35s ease;
     -webkit-font-smoothing:antialiased;
-    overflow-x:hidden;
-    max-width:100%;
+    font-feature-settings:"cv11","ss01";
+    transition:background .25s ease, color .25s ease;
   }
-
-  /* ---- scroll progress ---- */
-  .scroll-progress{
-    position:fixed;
-    top:0; left:0;
-    height:2px;
-    width:0%;
-    background:var(--accent);
-    z-index:60;
-    transition:width .08s linear;
-  }
+  a{color:inherit;}
+  .mono{font-family:'JetBrains Mono', ui-monospace, monospace; font-variant-numeric:tabular-nums;}
+  svg.i{width:16px; height:16px; flex-shrink:0; stroke:currentColor; fill:none; stroke-width:1.75; stroke-linecap:round; stroke-linejoin:round;}
 
   @media (prefers-reduced-motion: reduce){
-    *, *::before, *::after{animation:none !important; transition:none !important;}
-  }
-  .wrap{
-    max-width:740px;
-    margin:0 auto;
-    padding:0 max(28px, env(safe-area-inset-left)) 120px max(28px, env(safe-area-inset-left));
-    padding-right:max(28px, env(safe-area-inset-right));
-  }
-  .mono{font-family:'IBM Plex Mono', monospace;}
-
-  /* ---- top bar ---- */
-  .topbar{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    max-width:740px;
-    margin:0 auto;
-    padding:max(28px, env(safe-area-inset-top)) max(28px, env(safe-area-inset-right)) 0 max(28px, env(safe-area-inset-left));
-    gap:12px;
-  }
-  .brand-mark{
-    font-family:'IBM Plex Mono', monospace;
-    font-size:12px;
-    letter-spacing:.14em;
-    color:var(--muted);
-    text-transform:uppercase;
-  }
-  .toggle{
-    position:relative;
-    overflow:hidden;
-    display:flex;
-    align-items:center;
-    gap:8px;
-    border:1px solid var(--line);
-    background:var(--paper);
-    color:var(--text);
-    border-radius:100px;
-    padding:6px 14px 6px 10px;
-    cursor:pointer;
-    font-family:'IBM Plex Mono', monospace;
-    font-size:11px;
-    letter-spacing:.06em;
-    text-transform:uppercase;
-    transition:border-color .25s ease, transform .25s ease;
-  }
-  .toggle::before{
-    content:"";
-    position:absolute;
-    inset:0;
-    background:radial-gradient(90px circle at var(--mx,50%) var(--my,50%), var(--accent-soft), transparent 70%);
-    opacity:0;
-    transition:opacity .3s ease;
-  }
-  .toggle:hover{border-color:var(--accent); transform:translateY(-1px);}
-  .toggle:hover::before{opacity:1;}
-  .toggle:active{transform:scale(.96);}
-  .toggle{touch-action:manipulation;}
-  .toggle svg{width:14px;height:14px;stroke:var(--accent); position:relative; transition:transform .4s cubic-bezier(.34,1.56,.64,1);}
-  .toggle svg.spin{transform:rotate(180deg);}
-  .toggle span{position:relative;}
-
-  /* ---- buttons / cta row ---- */
-  .cta-row{
-    display:flex;
-    flex-wrap:wrap;
-    gap:10px;
-    margin-top:20px;
-  }
-  .btn{
-    position:relative;
-    overflow:hidden;
-    display:inline-flex;
-    align-items:center;
-    gap:7px;
-    padding:10px 16px;
-    border:1px solid var(--line);
-    border-radius:8px;
-    background:var(--paper);
-    color:var(--text);
-    font-family:'IBM Plex Mono', monospace;
-    font-size:11.5px;
-    letter-spacing:.04em;
-    text-transform:uppercase;
-    text-decoration:none;
-    cursor:pointer;
-    transition:border-color .25s ease, color .25s ease, transform .25s ease, background .25s ease;
-  }
-  .btn::before{
-    content:"";
-    position:absolute;
-    inset:0;
-    background:radial-gradient(120px circle at var(--mx,50%) var(--my,50%), var(--accent-soft), transparent 70%);
-    opacity:0;
-    transition:opacity .3s ease;
-  }
-  .btn:hover{border-color:var(--accent); color:var(--accent); transform:translateY(-1px);}
-  .btn:hover::before{opacity:1;}
-  .btn:active{transform:scale(.97);}
-  .btn{touch-action:manipulation;}
-  .btn svg{width:13px;height:13px; position:relative;}
-  .btn span{position:relative;}
-  .btn.primary{background:var(--accent); border-color:var(--accent); color:var(--paper);}
-  .btn.primary:hover{color:var(--paper); opacity:.9;}
-  .btn.primary::before{background:radial-gradient(120px circle at var(--mx,50%) var(--my,50%), rgba(255,255,255,.18), transparent 70%);}
-
-  /* ---- header ---- */
-  header.hero{
-    padding-top:64px;
-    margin-bottom:56px;
-  }
-  @keyframes rise{
-    from{opacity:0; transform:translateY(16px);}
-    to{opacity:1; transform:translateY(0);}
-  }
-  .eyebrow{
-    font-family:'IBM Plex Mono', monospace;
-    font-size:12px;
-    letter-spacing:.16em;
-    text-transform:uppercase;
-    color:var(--accent);
-    margin-bottom:18px;
-    animation:rise .6s cubic-bezier(.16,.84,.44,1) both;
-    animation-delay:.05s;
-  }
-  h1{
-    font-family:'Fraunces', serif;
-    font-weight:500;
-    font-size:clamp(32px, 8vw, 54px);
-    line-height:1.08;
-    margin:0 0 6px;
-    letter-spacing:-.01em;
-    overflow-wrap:break-word;
-    animation:rise .7s cubic-bezier(.16,.84,.44,1) both;
-    animation-delay:.15s;
-  }
-  h1 em{font-style:italic; color:var(--accent); font-weight:400;}
-  .role-line{
-    font-family:'IBM Plex Mono', monospace;
-    font-size:13px;
-    color:var(--muted);
-    letter-spacing:.02em;
-    margin:18px 0 22px;
-    max-width:520px;
-    animation:rise .6s cubic-bezier(.16,.84,.44,1) both;
-    animation-delay:.28s;
-  }
-  .contact-row{
-    display:flex;
-    flex-wrap:wrap;
-    gap:0;
-    font-family:'IBM Plex Mono', monospace;
-    font-size:12.5px;
-    color:var(--muted);
-    border-top:1px solid var(--line);
-    border-bottom:1px solid var(--line);
-    padding:14px 0;
-    animation:rise .6s cubic-bezier(.16,.84,.44,1) both;
-    animation-delay:.38s;
-  }
-  .contact-row a{color:var(--text); text-decoration:none; border-bottom:1px solid var(--line); transition:color .2s ease, border-color .2s ease; overflow-wrap:anywhere;}
-  .contact-row a:hover{border-color:var(--accent); color:var(--accent);}
-  .contact-row span:not(:last-child)::after{
-    content:"·";
-    margin:0 12px;
-    color:var(--line);
-  }
-  .cta-row{animation:rise .6s cubic-bezier(.16,.84,.44,1) both; animation-delay:.48s;}
-
-  /* ---- highlight badge (hero) ---- */
-  .highlight-badge{
-    display:inline-flex;
-    align-items:center;
-    gap:8px;
-    margin-top:16px;
-    padding:8px 14px 8px 10px;
-    border:1px solid var(--accent);
-    border-radius:100px;
-    background:var(--accent-soft);
-    animation:rise .6s cubic-bezier(.16,.84,.44,1) both;
-    animation-delay:.22s;
-  }
-  .highlight-badge .dot-ping{
-    position:relative;
-    width:7px; height:7px;
-    border-radius:50%;
-    background:var(--accent);
-    flex-shrink:0;
-  }
-  .highlight-badge .dot-ping::before{
-    content:"";
-    position:absolute;
-    inset:-4px;
-    border-radius:50%;
-    border:1px solid var(--accent);
-    animation:ping 2.4s cubic-bezier(0,0,.2,1) infinite;
-  }
-  @keyframes ping{
-    0%{transform:scale(.6); opacity:.9;}
-    75%,100%{transform:scale(1.9); opacity:0;}
-  }
-  .highlight-badge span{
-    font-family:'IBM Plex Mono', monospace;
-    font-size:11.5px;
-    letter-spacing:.03em;
-    color:var(--accent);
-    text-transform:uppercase;
+    *, *::before, *::after{animation:none !important; transition:none !important; scroll-behavior:auto !important;}
   }
 
-  /* ---- stat strip ---- */
-  .stats{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    margin-top:32px;
-  }
-  .stats{animation:rise .6s cubic-bezier(.16,.84,.44,1) both; animation-delay:.58s;}
-  .stat{
-    padding:16px 18px 0 0;
-    border-left:1px solid var(--line);
-    padding-left:18px;
-    transition:transform .25s ease;
-  }
-  .stat:hover{transform:translateY(-2px);}
-  .stat:first-child{border-left:none; padding-left:0;}
-  .stat .num{
-    font-family:'Fraunces', serif;
-    font-size:30px;
-    color:var(--accent);
-    line-height:1;
-    transition:color .25s ease;
-  }
-  .stat .label{
-    font-family:'IBM Plex Mono', monospace;
-    font-size:11px;
-    color:var(--muted);
-    text-transform:uppercase;
-    letter-spacing:.06em;
-    margin-top:8px;
-  }
+  /* ─────────── Shell ─────────── */
+  .shell{display:grid; grid-template-columns:288px minmax(0,1fr); min-height:100vh;}
 
-  /* ---- section framing ---- */
-  section{margin-top:64px;}
-  .sec-head{
-    display:flex;
-    align-items:baseline;
-    gap:12px;
-    margin-bottom:26px;
+  /* ─────────── Barra lateral ─────────── */
+  .side{
+    position:sticky; top:0; height:100vh;
+    background:var(--side);
+    color:var(--side-text);
+    display:flex; flex-direction:column;
+    border-right:1px solid var(--side-line);
+    overflow-y:auto;
+    scrollbar-width:thin; scrollbar-color:#334155 transparent;
   }
-  .sec-index{
-    font-family:'IBM Plex Mono', monospace;
-    font-size:12px;
-    color:var(--accent);
-  }
-  .sec-title{
-    font-family:'Fraunces', serif;
-    font-size:22px;
-    font-weight:500;
-    letter-spacing:-.01em;
-  }
-  .sec-rule{
-    flex:1;
-    height:1px;
-    background:var(--line);
-  }
-
-  .lede{
-    color:var(--text);
-    font-size:15.5px;
-    max-width:640px;
-  }
-  .lede .muted{color:var(--muted);}
-
-  /* ---- modelagem financeira (featured) ---- */
-  .feature-card{
-    position:relative;
-    border:1px solid var(--accent);
-    border-radius:14px;
-    padding:28px;
-    background:linear-gradient(180deg, var(--accent-soft), transparent 60%);
-    overflow:hidden;
-  }
-  .feature-card::before{
-    content:"";
-    position:absolute;
-    top:-40px; right:-40px;
-    width:140px; height:140px;
-    border-radius:50%;
-    background:var(--accent);
-    opacity:.07;
-  }
-  .feature-top{
-    display:flex;
-    align-items:center;
-    gap:10px;
-    margin-bottom:14px;
-  }
-  .feature-badge{
-    font-family:'IBM Plex Mono', monospace;
-    font-size:10px;
-    letter-spacing:.08em;
-    text-transform:uppercase;
-    color:var(--paper);
-    background:var(--accent);
-    padding:4px 10px;
-    border-radius:100px;
-    flex-shrink:0;
-  }
-  .feature-lede{
-    margin:0;
-    font-size:14.5px;
-    color:var(--text);
-    max-width:560px;
-  }
-  .feature-grid{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:16px;
-    margin-top:22px;
-  }
-  .feature-item{
-    position:relative;
-    background:var(--paper);
-    border:1px solid var(--line);
-    border-radius:10px;
-    padding:18px 16px;
-    transition:border-color .25s ease, transform .25s ease;
-  }
-  .feature-item:hover{border-color:var(--accent); transform:translateY(-2px);}
-  .feature-icon{
-    width:34px; height:34px;
-    border-radius:8px;
-    background:var(--accent-soft);
-    color:var(--accent);
+  .side-inner{padding:22px 18px 18px; display:flex; flex-direction:column; gap:20px; flex:1;}
+  .id{display:flex; align-items:center; gap:12px;}
+  .avatar{
+    width:44px; height:44px; border-radius:12px;
+    background:var(--brand); color:#fff;
     display:flex; align-items:center; justify-content:center;
-    margin-bottom:12px;
+    font-weight:700; font-size:15px; letter-spacing:.02em;
+    flex-shrink:0;
   }
-  .feature-icon svg{width:18px; height:18px;}
-  .feature-name{
-    font-family:'Fraunces', serif;
-    font-size:20px;
-    font-weight:600;
-    color:var(--accent);
-    line-height:1;
+  .id-name{font-weight:600; font-size:15px; line-height:1.25; color:#fff;}
+  .id-sub{font-size:12px; color:var(--side-muted); margin-top:2px;}
+  .role{font-size:13px; color:var(--side-text); line-height:1.5;}
+  .role strong{color:#fff; font-weight:600;}
+  .status{
+    display:inline-flex; align-items:center; gap:8px;
+    font-size:12px; color:#A7F3D0;
+    background:rgba(16,185,129,.1); border:1px solid rgba(16,185,129,.25);
+    padding:5px 10px; border-radius:999px; margin-top:12px;
   }
-  .feature-full{
-    font-family:'IBM Plex Mono', monospace;
-    font-size:10.5px;
-    color:var(--muted);
-    text-transform:uppercase;
-    letter-spacing:.03em;
-    margin:5px 0 10px;
-  }
-  .feature-desc{font-size:12.5px; color:var(--text); line-height:1.55;}
-  .feature-extra{
-    display:flex;
-    flex-wrap:wrap;
-    gap:8px;
-    margin-top:22px;
-  }
-  .tag-pill{
-    font-family:'IBM Plex Mono', monospace;
-    font-size:10.5px;
-    letter-spacing:.02em;
-    color:var(--muted);
-    border:1px solid var(--line);
-    background:var(--paper);
-    padding:6px 12px;
-    border-radius:100px;
-  }
+  .status .pulse{width:7px; height:7px; border-radius:50%; background:#34D399; position:relative;}
+  .status .pulse::after{content:""; position:absolute; inset:-3px; border-radius:50%; border:1px solid #34D399; animation:ping 2.4s cubic-bezier(0,0,.2,1) infinite;}
+  @keyframes ping{0%{transform:scale(.6);opacity:.9}75%,100%{transform:scale(1.8);opacity:0}}
 
-  /* ---- competencies ---- */
-  .comp-grid{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:10px 28px;
+  .side-label{
+    font-size:10px; font-weight:600; letter-spacing:.09em; text-transform:uppercase;
+    color:#64748B; padding:0 10px; margin-bottom:6px;
   }
-  .comp-item{
-    display:flex;
-    justify-content:space-between;
-    gap:12px;
-    padding:10px 12px;
-    margin:0 -12px;
-    border-bottom:1px solid var(--line);
-    border-radius:6px;
-    font-size:14px;
-    transition:background .25s ease, padding-left .25s ease;
+  .contact{list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:2px;}
+  .contact a, .contact span.row{
+    display:flex; align-items:center; gap:10px;
+    padding:7px 10px; border-radius:8px;
+    font-size:13px; color:var(--side-text); text-decoration:none;
+    overflow-wrap:anywhere;
+    transition:background .15s ease;
   }
-  .comp-item:hover{background:var(--accent-soft); padding-left:18px;}
-  .comp-item.highlight-row{border-color:var(--accent); background:var(--accent-soft);}
-  .comp-item.highlight-row .tag{color:var(--accent); font-weight:600;}
-  .comp-item .tag{
-    font-family:'IBM Plex Mono', monospace;
-    font-size:10.5px;
-    color:var(--muted);
+  .contact a:hover{background:var(--side-2);}
+  .contact svg.i{color:var(--side-muted); width:15px; height:15px;}
+  .contact .em{font-size:12px; letter-spacing:-.01em;}
+
+  .nav{display:flex; flex-direction:column; gap:2px;}
+  .nav a{
+    display:flex; align-items:center; gap:10px;
+    padding:7px 10px; border-radius:8px;
+    font-size:13.5px; color:var(--side-muted); text-decoration:none;
+    transition:background .15s ease, color .15s ease;
+  }
+  .nav a:hover{background:var(--side-2); color:#fff;}
+  .nav a.active{background:var(--brand); color:#fff;}
+  .nav a .new{
+    margin-left:auto; font-size:9.5px; font-weight:600; letter-spacing:.06em; text-transform:uppercase;
+    padding:2px 6px; border-radius:6px; background:rgba(59,130,246,.18); color:#93C5FD;
+  }
+  .nav a.active .new{background:rgba(255,255,255,.2); color:#fff;}
+
+  .side-actions{margin-top:auto; display:flex; flex-direction:column; gap:8px; padding-top:8px;}
+  .sbtn{
+    display:flex; align-items:center; justify-content:center; gap:8px;
+    height:38px; border-radius:10px; border:1px solid var(--side-line);
+    background:var(--side-2); color:var(--side-text);
+    font:500 13px 'Inter', sans-serif; cursor:pointer;
+    transition:background .15s ease, border-color .15s ease, transform .1s ease;
+    touch-action:manipulation;
+  }
+  .sbtn:hover{border-color:#334155; background:#243247;}
+  html.dark .sbtn:hover{background:#232327; border-color:#3F3F46;}
+  .sbtn:active{transform:scale(.98);}
+  .sbtn.primary{background:var(--brand); border-color:var(--brand); color:#fff;}
+  .sbtn.primary:hover{background:var(--brand-strong); border-color:var(--brand-strong);}
+  .sbtn-row{display:grid; grid-template-columns:1fr 1fr; gap:8px;}
+
+  /* ─────────── Conteúdo ─────────── */
+  .main{padding:28px 40px 80px; max-width:1040px; width:100%;}
+  .crumbs{
+    display:flex; align-items:center; justify-content:space-between; gap:12px;
+    font-size:12.5px; color:var(--muted); margin-bottom:28px;
+  }
+  .crumbs b{color:var(--text); font-weight:500;}
+  .crumbs .sep{color:var(--faint); margin:0 6px;}
+
+  .card{
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:var(--radius);
+    box-shadow:var(--shadow);
+  }
+  section{margin-top:44px; scroll-margin-top:24px;}
+  .sec-head{display:flex; align-items:flex-end; justify-content:space-between; gap:16px; margin-bottom:16px;}
+  .eyebrow{
+    font-size:11px; font-weight:600; letter-spacing:.09em; text-transform:uppercase;
+    color:var(--brand-text); margin-bottom:6px;
+  }
+  h2{font-size:20px; font-weight:600; letter-spacing:-.015em; margin:0; line-height:1.3;}
+  .sec-note{font-size:12.5px; color:var(--muted);}
+
+  /* Hero */
+  .hero{padding:32px;}
+  .hero h1{
+    font-size:clamp(26px, 3.3vw, 36px);
+    line-height:1.15; letter-spacing:-.025em; font-weight:700;
+    margin:0 0 14px; max-width:720px;
+  }
+  .hero h1 em{font-style:normal; color:var(--brand-text);}
+  .hero p{margin:0; color:var(--text-2); max-width:740px; font-size:15.5px;}
+  .hero p + p{margin-top:10px; color:var(--muted); font-size:14.5px;}
+
+  .kpis{display:grid; grid-template-columns:repeat(4,1fr); gap:14px; margin-top:16px;}
+  .kpi{padding:18px;}
+  .kpi-ic{
+    width:36px; height:36px; border-radius:11px;
+    display:inline-flex; align-items:center; justify-content:center; margin-bottom:14px;
+  }
+  .kpi-ic svg.i{width:18px; height:18px;}
+  .ic-brand{background:var(--brand-soft); color:var(--brand-text);}
+  .ic-emerald{background:var(--emerald-soft); color:var(--emerald);}
+  .ic-amber{background:var(--amber-soft); color:var(--amber);}
+  .ic-slate{background:var(--border-soft); color:var(--muted);}
+  html.dark .ic-slate{background:#27272A;}
+  .kpi-label{font-size:12.5px; color:var(--muted); line-height:1.4;}
+  .kpi-val{font-size:24px; font-weight:600; margin-top:4px; letter-spacing:-.02em; color:var(--text);}
+
+  /* Sistema financeiro (destaque) */
+  .feature{overflow:hidden;}
+  .feature-top{padding:28px 28px 0;}
+  .ft-row{display:flex; align-items:flex-start; gap:14px; flex-wrap:wrap;}
+  .ft-logo{
+    width:44px; height:44px; border-radius:12px; flex-shrink:0;
+    background:var(--side); color:#fff; display:flex; align-items:center; justify-content:center;
+  }
+  html.dark .ft-logo{background:#27272A;}
+  .ft-logo svg.i{width:22px; height:22px; color:#60A5FA;}
+  .ft-title{font-size:19px; font-weight:600; letter-spacing:-.01em; line-height:1.3;}
+  .ft-sub{font-size:13px; color:var(--muted); margin-top:2px;}
+  .badges{display:flex; gap:6px; flex-wrap:wrap; margin-left:auto;}
+  .badge{
+    display:inline-flex; align-items:center; gap:6px;
+    font-size:11.5px; font-weight:500; padding:4px 10px; border-radius:999px;
+    border:1px solid var(--border); color:var(--text-2); background:var(--card);
     white-space:nowrap;
   }
+  .badge.brand{background:var(--brand-soft); border-color:var(--brand-line); color:var(--brand-text);}
+  .badge.ok{background:var(--emerald-soft); border-color:transparent; color:var(--emerald);}
+  .badge .d{width:6px; height:6px; border-radius:50%; background:currentColor;}
+  .ft-lede{margin:18px 0 0; color:var(--text-2); max-width:760px;}
 
-  /* ---- ledger / experience ---- */
-  .ledger{
-    position:relative;
-    padding-left:26px;
-  }
-  .ledger::before{
-    content:"";
-    position:absolute;
-    left:0; top:0;
-    width:1px;
-    height:100%;
-    background:var(--line);
-  }
-  .entry{
-    position:relative;
-    padding-bottom:38px;
-  }
-  .entry:last-child{padding-bottom:0;}
-  .entry::before{
-    content:"";
-    position:absolute;
-    left:-30px;
-    top:6px;
-    width:7px;
-    height:7px;
-    border-radius:50%;
-    background:var(--accent);
-    transition:box-shadow .25s ease;
-  }
-  .entry:hover::before{box-shadow:0 0 0 4px var(--accent-soft);}
-  .entry-title{transition:color .2s ease;}
-  .entry:hover .entry-title{color:var(--accent);}
-  .entry-date{
-    font-family:'IBM Plex Mono', monospace;
-    font-size:11.5px;
-    color:var(--accent);
-    text-transform:uppercase;
-    letter-spacing:.04em;
-    margin-bottom:6px;
-  }
-  .entry-title{
-    font-family:'Fraunces', serif;
-    font-size:19px;
-    font-weight:500;
-    margin:0 0 2px;
-  }
-  .entry-org{
-    font-size:13.5px;
-    color:var(--muted);
-    margin-bottom:12px;
-    overflow-wrap:break-word;
-  }
-  .entry ul{
-    margin:0;
-    padding-left:18px;
-    font-size:14px;
-  }
-  .entry li{margin-bottom:6px; color:var(--text);}
-  .entry li::marker{color:var(--line);}
+  .ba{display:grid; grid-template-columns:1fr 1fr; gap:14px; padding:22px 28px 0;}
+  .ba-col{border:1px solid var(--border); border-radius:12px; padding:16px 18px;}
+  .ba-col.before{background:var(--bg);}
+  .ba-col.after{background:var(--brand-soft); border-color:var(--brand-line);}
+  .ba-h{display:flex; align-items:center; gap:8px; font-size:12px; font-weight:600; letter-spacing:.06em; text-transform:uppercase; margin-bottom:10px;}
+  .before .ba-h{color:var(--muted);}
+  .after .ba-h{color:var(--brand-text);}
+  .ba ul{list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:8px;}
+  .ba li{display:flex; gap:9px; font-size:13.5px; line-height:1.45; color:var(--text-2);}
+  .ba li svg.i{width:15px; height:15px; margin-top:2px;}
+  .before li svg.i{color:var(--rose);}
+  .after li svg.i{color:var(--emerald);}
 
-  /* ---- education / certs ---- */
-  .two-col{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:36px;
+  /* Mini UI do sistema (ilustração) */
+  .mock-wrap{padding:22px 28px 0;}
+  .mock{
+    border:1px solid var(--border); border-radius:12px; overflow:hidden;
+    background:var(--bg); box-shadow:var(--shadow-lg);
   }
-  .card-title{
-    font-family:'IBM Plex Mono', monospace;
-    font-size:11px;
-    letter-spacing:.08em;
-    text-transform:uppercase;
-    color:var(--muted);
-    margin-bottom:14px;
+  .mock-bar{
+    display:flex; align-items:center; gap:14px;
+    background:#0F172A; padding:9px 14px; color:#CBD5E1; font-size:11.5px;
+    overflow:hidden; white-space:nowrap;
   }
-  .edu-item{border-bottom:1px solid var(--line); padding:12px 0; transition:padding-left .25s ease;}
-  .edu-item:first-child{padding-top:0;}
-  .edu-item:hover{padding-left:8px;}
-  .edu-name{font-family:'Fraunces', serif; font-size:16px; margin-bottom:3px;}
-  .edu-when{font-family:'IBM Plex Mono', monospace; font-size:11.5px; color:var(--muted);}
-  .cert-list{list-style:none; margin:0; padding:0;}
-  .cert-list li{
-    padding:12px 0;
-    border-bottom:1px solid var(--line);
-    font-size:14px;
-    display:flex;
-    gap:10px;
-    transition:padding-left .25s ease;
-  }
-  .cert-list li:hover{padding-left:8px;}
-  .cert-list li:first-child{padding-top:0;}
-  .cert-list .mark{color:var(--accent); display:flex; align-items:center; transition:transform .3s cubic-bezier(.34,1.56,.64,1);}
-  .cert-list .mark svg{width:16px;height:16px;}
-  .cert-list li:hover .mark{transform:scale(1.2);}
+  html.dark .mock-bar{background:#0B0B0E; border-bottom:1px solid #27272A;}
+  .mock-dots{display:flex; gap:5px;}
+  .mock-dots i{width:8px; height:8px; border-radius:50%; background:#334155; display:block;}
+  .mock-brand{display:flex; align-items:center; gap:7px; color:#fff; font-weight:600;}
+  .mock-brand span{width:16px; height:16px; border-radius:4px; background:var(--brand); display:inline-block;}
+  .mock-tab{padding:3px 9px; border-radius:6px; color:#94A3B8;}
+  .mock-tab.on{background:#1E293B; color:#fff;}
+  html.dark .mock-tab.on{background:#27272A;}
+  .mock-body{padding:14px; display:grid; grid-template-columns:repeat(3,1fr) 1.6fr; gap:10px;}
+  .mk{background:var(--card); border:1px solid var(--border); border-radius:10px; padding:11px 12px;}
+  .mk-l{font-size:10.5px; color:var(--muted);}
+  .mk-v{font-size:15px; font-weight:600; margin-top:2px;}
+  .mk-d{font-size:10px; margin-top:2px;}
+  .up{color:var(--emerald);} .down{color:var(--rose);}
+  .mk.chart{grid-row:span 1; display:flex; flex-direction:column;}
+  .mk.chart svg{width:100%; height:62px; margin-top:6px;}
+  .legend{display:flex; gap:10px; font-size:10px; color:var(--muted);}
+  .legend i{display:inline-block; width:8px; height:8px; border-radius:2px; margin-right:4px; vertical-align:-1px;}
+  .mock-cap{font-size:11px; color:var(--faint); margin-top:8px; text-align:right;}
 
-  /* ---- perfil / radar ---- */
-  .profile-grid{
-    display:grid;
-    grid-template-columns:280px 1fr;
-    gap:36px;
-    align-items:center;
+  .modules{display:grid; grid-template-columns:repeat(3,1fr); gap:12px; padding:22px 28px 0;}
+  .mod{border:1px solid var(--border); border-radius:12px; padding:16px; transition:border-color .2s ease, transform .2s ease;}
+  .mod:hover{border-color:var(--brand-line); transform:translateY(-1px);}
+  .mod-h{display:flex; align-items:center; gap:9px; font-weight:600; font-size:14px; margin-bottom:8px;}
+  .mod-h .kpi-ic{width:28px; height:28px; border-radius:8px; margin:0;}
+  .mod-h .kpi-ic svg.i{width:15px; height:15px;}
+  .mod p{margin:0; font-size:12.8px; color:var(--muted); line-height:1.5;}
+
+  .stack{display:flex; flex-wrap:wrap; gap:6px; align-items:center; padding:22px 28px 28px;}
+  .stack-l{font-size:12px; color:var(--muted); margin-right:4px;}
+  .chip{
+    font-size:12px; padding:4px 10px; border-radius:7px;
+    background:var(--bg); border:1px solid var(--border); color:var(--text-2);
   }
-  .profile-grid>*{min-width:0;}
-  .radar-box{display:flex; justify-content:center; position:relative;}
-  .radar{width:100%; max-width:280px; overflow:visible; touch-action:manipulation;}
-  .radar .ring{fill:none; stroke:var(--line); stroke-width:1;}
-  .radar .spoke{stroke:var(--line); stroke-width:1; transition:stroke .2s ease;}
-  .radar .spoke.active{stroke:var(--accent);}
-  .radar .data{
-    fill:var(--accent-soft);
-    stroke:var(--accent);
-    stroke-width:1.6;
-    stroke-linejoin:round;
-    transition:fill .2s ease;
-  }
-  .radar .pt{
-    fill:var(--accent);
-    cursor:pointer;
-    transition:r .15s ease;
-  }
-  .radar .pt:hover, .radar .pt.active{r:5.5;}
-  .radar .axis-label{
-    font-family:'IBM Plex Mono', monospace;
-    font-size:9.5px;
-    fill:var(--muted);
-    text-transform:uppercase;
-    letter-spacing:.03em;
-    cursor:pointer;
-    transition:fill .2s ease, font-weight .2s ease;
-  }
-  .radar .axis-label.active{fill:var(--accent); font-weight:600;}
-  .radar-tip{
-    position:absolute; left:0; top:0;
-    transform:translate(-50%,-125%);
-    background:var(--paper); border:1px solid var(--line); border-radius:6px;
-    padding:4px 9px; font-family:'IBM Plex Mono', monospace; font-size:11px;
-    color:var(--text); white-space:nowrap; pointer-events:none;
-    opacity:0; transition:opacity .15s ease; z-index:5;
-  }
-  .radar-tip.show{opacity:1;}
-  .qual-list{list-style:none; margin:18px 0 0; padding:0;}
-  .qual-list li{
-    display:flex;
-    justify-content:space-between;
-    gap:16px;
-    padding:9px 0;
-    border-bottom:1px solid var(--line);
-    font-size:13.5px;
-  }
-  .qual-list li:first-child{padding-top:0;}
-  .qual-name{color:var(--text); font-weight:500;}
-  .qual-note{
-    font-family:'IBM Plex Mono', monospace;
-    font-size:11px;
-    color:var(--muted);
-    text-align:right;
+  html.dark .chip{background:#1F1F23;}
+
+  /* Método */
+  .steps{display:grid; grid-template-columns:repeat(4,1fr); gap:14px;}
+  .step{padding:18px; position:relative;}
+  .step-n{font-size:12px; color:var(--brand-text); font-weight:600;}
+  .step-t{font-weight:600; font-size:15px; margin:6px 0 4px;}
+  .step p{margin:0; font-size:13px; color:var(--muted); line-height:1.5;}
+  .step:not(:last-child)::after{
+    content:""; position:absolute; top:28px; right:-11px; width:8px; height:8px;
+    border-top:1.5px solid var(--faint); border-right:1.5px solid var(--faint);
+    transform:rotate(45deg); z-index:1;
   }
 
-  /* ---- ferramentas ---- */
-  .tool-grid{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:20px 28px;
-  }
-  .tool-item{
-    display:flex;
-    gap:14px;
-    padding:16px 0;
-    border-bottom:1px solid var(--line);
-    transition:padding-left .25s ease;
-  }
-  .tool-item:hover{padding-left:6px;}
-  .tool-icon{
-    flex-shrink:0;
-    width:34px;
-    height:34px;
-    border:1px solid var(--line);
-    border-radius:8px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    color:var(--accent);
-    transition:border-color .25s ease, transform .35s cubic-bezier(.34,1.56,.64,1);
-  }
-  .tool-item:hover .tool-icon{border-color:var(--accent); transform:rotate(-6deg) scale(1.08);}
-  .tool-icon svg{width:17px;height:17px;}
-  .tool-name{font-size:14px; font-weight:500; margin-bottom:2px;}
-  .tool-note{
-    font-family:'IBM Plex Mono', monospace;
-    font-size:10.5px;
-    color:var(--muted);
-    margin-bottom:8px;
-  }
-  .dots{display:flex; gap:5px;}
-  .dot{
-    width:8px; height:8px; border-radius:50%; background:var(--line);
-    transition:background .25s ease;
-  }
-  .dot.on{background:var(--accent);}
+  /* Modelagem */
+  .fin-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:14px;}
+  .fin{padding:18px;}
+  .fin-k{display:flex; align-items:baseline; gap:8px;}
+  .fin-k b{font-size:20px; font-weight:700; color:var(--brand-text); letter-spacing:-.01em;}
+  .fin-k span{font-size:12px; color:var(--muted);}
+  .fin p{margin:8px 0 0; font-size:13px; color:var(--text-2); line-height:1.5;}
+  .fin-extra{display:flex; flex-wrap:wrap; gap:6px; margin-top:12px;}
 
-  /* ---- footer ---- */
+  /* Experiência */
+  .xp{padding:8px 0;}
+  .job{display:grid; grid-template-columns:168px 1fr; gap:24px; padding:22px 28px; border-top:1px solid var(--border);}
+  .job:first-child{border-top:none;}
+  .job-when{font-size:12px; color:var(--muted); line-height:1.5;}
+  .job-when .now{display:flex; align-items:center; gap:6px; color:var(--emerald); font-weight:500; margin-bottom:2px;}
+  .job-when .now .d{width:6px; height:6px; border-radius:50%; background:currentColor;}
+  .job-t{font-weight:600; font-size:15.5px; line-height:1.35;}
+  .job-o{font-size:13px; color:var(--muted); margin-top:1px;}
+  .job ul{margin:12px 0 0; padding:0; list-style:none; display:flex; flex-direction:column; gap:7px;}
+  .job li{position:relative; padding-left:16px; font-size:13.8px; color:var(--text-2); line-height:1.55;}
+  .job li::before{content:""; position:absolute; left:2px; top:9px; width:5px; height:5px; border-radius:50%; background:var(--faint);}
+  .job li.hl{
+    background:var(--brand-soft); border:1px solid var(--brand-line); border-radius:10px;
+    padding:10px 12px 10px 34px; color:var(--text);
+  }
+  .job li.hl::before{display:none;}
+  .job li.hl svg.i{position:absolute; left:11px; top:12px; width:15px; height:15px; color:var(--brand-text);}
+
+  /* Competências */
+  .comp{display:grid; grid-template-columns:repeat(3,1fr); gap:14px;}
+  .comp .card{padding:18px;}
+  .comp-h{display:flex; align-items:center; gap:9px; font-weight:600; font-size:14px; margin-bottom:12px;}
+  .comp-h .kpi-ic{width:28px; height:28px; border-radius:8px; margin:0;}
+  .comp-h .kpi-ic svg.i{width:15px; height:15px;}
+  .chips{display:flex; flex-wrap:wrap; gap:6px;}
+  .chip.key{background:var(--brand-soft); border-color:var(--brand-line); color:var(--brand-text); font-weight:500;}
+
+  /* Ferramentas */
+  .tools{padding:6px 0;}
+  .tool{display:grid; grid-template-columns:32px 1fr 120px; align-items:center; gap:14px; padding:12px 22px; border-top:1px solid var(--border);}
+  .tool:first-child{border-top:none;}
+  .tool .kpi-ic{width:32px; height:32px; border-radius:9px; margin:0;}
+  .tool .kpi-ic svg.i{width:16px; height:16px;}
+  .tool-n{font-weight:500; font-size:14px; line-height:1.3;}
+  .tool-d{font-size:12px; color:var(--muted);}
+  .lvl{display:grid; grid-template-columns:repeat(4,1fr); gap:4px;}
+  .lvl i{height:6px; border-radius:3px; background:var(--border); display:block;}
+  .lvl i.on{background:var(--brand);}
+  .lvl-t{font-size:10.5px; color:var(--muted); text-align:right; margin-top:5px;}
+  .tools-wrap{display:grid; grid-template-columns:1fr 1fr; gap:14px;}
+
+  /* Formação */
+  .edu-grid{display:grid; grid-template-columns:1fr 1fr; gap:14px;}
+  .edu-grid .card{padding:6px 0;}
+  .edu-h{font-size:11px; font-weight:600; letter-spacing:.09em; text-transform:uppercase; color:var(--muted); padding:14px 22px 6px;}
+  .edu{display:flex; gap:12px; align-items:flex-start; padding:12px 22px; border-top:1px solid var(--border);}
+  .edu:nth-child(2){border-top:none;}
+  .edu .kpi-ic{width:30px; height:30px; border-radius:8px; margin:0;}
+  .edu .kpi-ic svg.i{width:15px; height:15px;}
+  .edu-n{font-weight:500; font-size:14px; line-height:1.35;}
+  .edu-w{font-size:12px; color:var(--muted); margin-top:2px;}
+
   footer{
-    margin-top:80px;
-    padding-top:26px;
-    border-top:1px solid var(--line);
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    flex-wrap:wrap;
-    gap:14px;
-    font-family:'IBM Plex Mono', monospace;
-    font-size:11.5px;
-    color:var(--muted);
+    margin-top:56px; padding-top:20px; border-top:1px solid var(--border);
+    display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px;
+    font-size:12.5px; color:var(--muted);
   }
-  footer a{color:var(--accent); text-decoration:none;}
+  footer a{color:var(--brand-text); text-decoration:none;}
 
-  @media (max-width:640px){
-    .wrap{padding:0 20px 90px;}
-    .topbar{padding:20px 20px 0;}
-    header.hero{padding-top:40px; margin-bottom:40px;}
-    h1{font-size:clamp(30px, 9vw, 44px);}
-    .role-line{font-size:12px;}
-    .contact-row{font-size:11.5px; gap:4px 0;}
-    .contact-row span:not(:last-child)::after{margin:0 8px;}
-    .cta-row{flex-direction:column;}
-    .btn{width:100%; justify-content:center; padding:13px 16px;}
-    .toggle{padding:9px 14px 9px 12px;}
-    section{margin-top:48px;}
-    .sec-title{font-size:19px;}
-    .comp-grid{grid-template-columns:1fr;}
-    .two-col{grid-template-columns:1fr; gap:28px;}
-    .tool-grid{grid-template-columns:1fr;}
-    .feature-card{padding:20px;}
-    .feature-grid{grid-template-columns:1fr; gap:12px;}
-    .profile-grid{grid-template-columns:1fr; gap:28px;}
-    .radar-box{max-width:240px; margin:0 auto;}
-    .qual-list li{flex-direction:column; align-items:flex-start; gap:2px;}
-    .qual-note{text-align:left;}
-    .stats{grid-template-columns:1fr; row-gap:14px;}
-    .stat{border-left:none; padding-left:0; border-top:1px solid var(--line); padding-top:14px;}
-    .stat:first-child{border-top:none; padding-top:0;}
-    .ledger{padding-left:22px;}
-    .entry::before{left:-26px;}
-    .entry-title{font-size:17px;}
-    footer{flex-direction:column; align-items:flex-start; gap:8px;}
+  /* Toast (mesmo comportamento do sistema) */
+  .toast{
+    position:fixed; left:50%; bottom:24px; transform:translate(-50%, 20px);
+    background:#0F172A; color:#fff; font-size:13px; padding:10px 16px; border-radius:10px;
+    display:flex; align-items:center; gap:8px; box-shadow:0 10px 30px -10px rgba(0,0,0,.4);
+    opacity:0; pointer-events:none; transition:opacity .2s ease, transform .2s ease; z-index:50;
+  }
+  html.dark .toast{background:#27272A;}
+  .toast.show{opacity:1; transform:translate(-50%,0);}
+  .toast svg.i{color:#34D399;}
+
+  /* ─────────── Responsivo ─────────── */
+  @media (max-width:1100px){
+    .kpis{grid-template-columns:repeat(2,1fr);}
+    .modules{grid-template-columns:repeat(2,1fr);}
+    .comp{grid-template-columns:1fr 1fr;}
+    .comp .card:last-child{grid-column:1 / -1;}
+    .tools-wrap{grid-template-columns:1fr;}
+    .mock-body{grid-template-columns:repeat(3,1fr);}
+    .mk.chart{grid-column:1 / -1;}
+  }
+  @media (max-width:900px){
+    .shell{grid-template-columns:1fr;}
+    .side{position:relative; height:auto; border-right:none;}
+    .side-inner{padding:24px 16px 20px; gap:18px;}
+    .nav-block{display:none;}
+    .contact{display:grid; grid-template-columns:1fr 1fr; gap:2px 8px;}
+    .side-actions{margin-top:0;}
+    .main{padding:20px 16px 64px;}
+    .crumbs{margin-bottom:20px;}
+    .hero{padding:22px 20px;}
+    .feature-top{padding:22px 20px 0;}
+    .ba, .mock-wrap, .modules{padding-left:20px; padding-right:20px;}
+    .stack{padding:20px;}
+    .steps{grid-template-columns:1fr 1fr;}
+    .step::after{display:none;}
+    .fin-grid{grid-template-columns:1fr;}
+    .job{grid-template-columns:1fr; gap:8px; padding:20px;}
+    .edu-grid{grid-template-columns:1fr;}
+    .badges{margin-left:0; width:100%;}
+  }
+  @media (max-width:600px){
+    body{font-size:14.5px;}
+    .contact{grid-template-columns:1fr;}
+    .kpis{gap:10px;}
+    .kpi{padding:14px;}
+    .kpi-val{font-size:20px;}
+    .ba{grid-template-columns:1fr;}
+    .modules{grid-template-columns:1fr;}
+    .mock-body{grid-template-columns:1fr 1fr; padding:10px; gap:8px;}
+    .mock-body .mk:nth-child(3){display:none;}
+    .mock-tab:not(.on){display:none;}
+    .steps{grid-template-columns:1fr;}
+    .comp{grid-template-columns:1fr;}
+    .tool{grid-template-columns:32px 1fr; padding:12px 16px;}
+    .tool .lvl-box{grid-column:2;}
+    .lvl-t{text-align:left;}
+    .crumbs .upd{display:none;}
+    footer{flex-direction:column;}
   }
 
-  @media (max-width:400px){
-    .eyebrow{font-size:11px; letter-spacing:.12em;}
-    h1{font-size:clamp(26px, 10vw, 36px);}
-    .stat .num{font-size:26px;}
-    .radar-box{max-width:210px;}
-    .radar .axis-label{font-size:8.5px;}
-  }
-
-  @media (hover:none) and (pointer:coarse){
-    .btn, .toggle{min-height:44px;}
-    .comp-item, .entry, .tool-item, .edu-item, .cert-list li{-webkit-tap-highlight-color:transparent;}
-    .comp-item:active{background:var(--accent-soft); padding-left:18px;}
-    .entry:active .entry-title{color:var(--accent);}
-    .entry:active::before{box-shadow:0 0 0 4px var(--accent-soft);}
-    .tool-item:active .tool-icon{border-color:var(--accent); transform:scale(1.05);}
-    .cert-list li:active .mark{transform:scale(1.15);}
-    .edu-item:active{padding-left:8px;}
-    .stat:active{transform:translateY(-2px);}
-  }
-
-  @media (max-width:360px){
-    .wrap{padding-left:16px; padding-right:16px;}
-    .topbar{padding-left:16px; padding-right:16px;}
-    .eyebrow{font-size:10px;}
-    h1{font-size:clamp(26px, 9vw, 32px);}
-    .sec-title{font-size:17px;}
-    .entry-title{font-size:16px;}
-    .stat .num{font-size:22px;}
-    .stat .label{font-size:10px;}
-    .radar-box{max-width:180px;}
-    .radar .axis-label{font-size:7.5px;}
-    .btn{font-size:11px; padding:12px 14px;}
+  /* ─────────── Impressão / PDF ─────────── */
+  @media print{
+    @page{size:A4; margin:12mm 12mm 14mm;}
+    :root, html.dark{
+      --bg:#FFFFFF; --card:#FFFFFF; --border:#E2E8F0; --border-soft:#F1F5F9;
+      --text:#0F172A; --text-2:#334155; --muted:#64748B; --faint:#94A3B8;
+      --brand:#2563EB; --brand-text:#1D4ED8; --brand-soft:#EFF6FF; --brand-line:#BFDBFE;
+      --emerald:#059669; --emerald-soft:#ECFDF5; --rose:#E11D48; --amber:#D97706; --amber-soft:#FFFBEB;
+      --shadow:none; --shadow-lg:none;
+    }
+    *{-webkit-print-color-adjust:exact; print-color-adjust:exact;}
+    body{font-size:12px; background:#fff;}
+    .shell{display:block;}
+    .side{position:static; height:auto; background:#0F172A; border-radius:12px; margin-bottom:14px;}
+    .side-inner{padding:16px 18px; gap:12px; display:grid; grid-template-columns:1.1fr 1fr; align-items:start;}
+    .nav-block, .side-actions, .crumbs, .mock-wrap, .toast{display:none !important;}
+    .contact{display:grid; grid-template-columns:1fr 1fr; gap:0 8px;}
+    .contact a, .contact span.row{padding:3px 0; font-size:11px;}
+    .side-label{padding:0; margin-bottom:2px;}
+    .main{padding:0; max-width:none;}
+    section{margin-top:18px; break-inside:auto;}
+    h2{font-size:15px;}
+    .eyebrow{font-size:9.5px; margin-bottom:2px;}
+    .sec-head{margin-bottom:8px;}
+    .hero{padding:16px 18px;}
+    .hero h1{font-size:20px; margin-bottom:8px;}
+    .hero p{font-size:12px;}
+    .hero p + p{font-size:11.5px;}
+    .kpis{grid-template-columns:repeat(4,1fr); gap:8px; margin-top:8px;}
+    .kpi{padding:10px 12px;}
+    .kpi-ic{display:none;}
+    .kpi-val{font-size:16px;}
+    .kpi-label{font-size:10.5px;}
+    .feature-top{padding:16px 18px 0;}
+    .ba, .modules{padding:12px 18px 0;}
+    .ba{grid-template-columns:1fr 1fr;}
+    .ba li{font-size:11px;}
+    .modules{grid-template-columns:repeat(3,1fr); gap:8px;}
+    .mod{padding:10px 12px;}
+    .mod p{font-size:10.5px;}
+    .stack{padding:12px 18px 16px;}
+    .chip{font-size:10px; padding:2px 7px;}
+    .steps, .fin-grid{grid-template-columns:repeat(4,1fr); gap:8px;}
+    .fin-grid{grid-template-columns:repeat(3,1fr);}
+    .step, .fin{padding:10px 12px;}
+    .step::after{display:none;}
+    .step p, .fin p{font-size:10.5px;}
+    .job{grid-template-columns:120px 1fr; gap:14px; padding:12px 18px; break-inside:avoid;}
+    .job li{font-size:11px;}
+    .comp{grid-template-columns:repeat(3,1fr); gap:8px;}
+    .comp .card{padding:12px;}
+    .comp .card:last-child{grid-column:auto;}
+    .tools-wrap{grid-template-columns:1fr 1fr; gap:8px;}
+    .tool{padding:7px 14px; grid-template-columns:24px 1fr 80px;}
+    .tool .kpi-ic{width:24px; height:24px;}
+    .tool-n{font-size:11.5px;} .tool-d{font-size:10px;}
+    .edu-grid{grid-template-columns:1fr 1fr; gap:8px;}
+    .edu{padding:8px 16px;}
+    .card, .mod, .step, .fin, .kpi, .edu-grid .card{break-inside:avoid;}
+    #sistema{break-before:auto;}
+    #experiencia{break-before:page;}
+    footer{margin-top:18px; font-size:10.5px;}
+    a{text-decoration:none;}
   }
 </style>
 </head>
 <body>
 
-<div class="scroll-progress" id="scrollProgress"></div>
+<!-- Ícones (traço no estilo Lucide, o mesmo pacote do sistema) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-phone" viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></symbol>
+    <symbol id="i-linkedin" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></symbol>
+    <symbol id="i-grid" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/></symbol>
+    <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></symbol>
+    <symbol id="i-cpu" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><path d="M9 1v3M15 1v3M9 20v3M15 20v3M20 9h3M20 14h3M1 9h3M1 14h3"/></symbol>
+    <symbol id="i-route" viewBox="0 0 24 24"><circle cx="6" cy="19" r="3"/><path d="M9 19h8.5a3.5 3.5 0 0 0 0-7h-11a3.5 3.5 0 0 1 0-7H15"/><circle cx="18" cy="5" r="3"/></symbol>
+    <symbol id="i-chart" viewBox="0 0 24 24"><path d="M3 3v18h18"/><path d="m7 15 4-4 3 3 6-6"/></symbol>
+    <symbol id="i-brief" viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></symbol>
+    <symbol id="i-star" viewBox="0 0 24 24"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></symbol>
+    <symbol id="i-wrench" viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.8-3.8a6 6 0 0 1-7.9 7.9l-6.9 6.9a2.1 2.1 0 0 1-3-3l6.9-6.9a6 6 0 0 1 7.9-7.9z"/></symbol>
+    <symbol id="i-cap" viewBox="0 0 24 24"><path d="M22 10 12 5 2 10l10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></symbol>
+    <symbol id="i-copy" viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></symbol>
+    <symbol id="i-download" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/><path d="M12 15V3"/></symbol>
+    <symbol id="i-moon" viewBox="0 0 24 24"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9z"/></symbol>
+    <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></symbol>
+    <symbol id="i-x" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="m15 9-6 6M9 9l6 6"/></symbol>
+    <symbol id="i-sheet" viewBox="0 0 24 24"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M8 13h2M14 13h2M8 17h2M14 17h2"/></symbol>
+    <symbol id="i-wallet" viewBox="0 0 24 24"><path d="M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1"/><path d="M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4"/></symbol>
+    <symbol id="i-trend" viewBox="0 0 24 24"><path d="m22 7-8.5 8.5-5-5L2 17"/><path d="M16 7h6v6"/></symbol>
+    <symbol id="i-receipt" viewBox="0 0 24 24"><path d="M4 2v20l2-1 2 1 2-1 2 1 2-1 2 1 2-1 2 1V2l-2 1-2-1-2 1-2-1-2 1-2-1-2 1z"/><path d="M16 8H8M16 12H8M13 16H8"/></symbol>
+    <symbol id="i-users" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.9M16 3.1a4 4 0 0 1 0 7.8"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.7 9a1 1 0 0 1-.7 0C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.2-2.7a1.2 1.2 0 0 1 1.5 0C14.5 3.8 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></symbol>
+    <symbol id="i-gauge" viewBox="0 0 24 24"><path d="m12 14 4-4"/><path d="M3.3 19a10 10 0 1 1 17.4 0"/></symbol>
+    <symbol id="i-layers" viewBox="0 0 24 24"><path d="m12 2 10 5-10 5L2 7z"/><path d="m2 17 10 5 10-5M2 12l10 5 10-5"/></symbol>
+    <symbol id="i-git" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M3 12h6M15 12h6"/></symbol>
+    <symbol id="i-db" viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14a9 3 0 0 0 18 0V5"/><path d="M3 12a9 3 0 0 0 18 0"/></symbol>
+    <symbol id="i-code" viewBox="0 0 24 24"><path d="m16 18 6-6-6-6M8 6l-6 6 6 6"/></symbol>
+    <symbol id="i-sparkle" viewBox="0 0 24 24"><path d="M12 3l1.9 5.8L20 11l-6.1 2.2L12 19l-1.9-5.8L4 11l6.1-2.2z"/></symbol>
+    <symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></symbol>
+    <symbol id="i-scale" viewBox="0 0 24 24"><path d="M12 3v18M7 21h10M5 7h14"/><path d="m5 7-3 7a3 3 0 0 0 6 0zM19 7l-3 7a3 3 0 0 0 6 0z"/></symbol>
+    <symbol id="i-award" viewBox="0 0 24 24"><circle cx="12" cy="8" r="6"/><path d="M15.5 13 17 22l-5-3-5 3 1.5-9"/></symbol>
+  </defs>
+</svg>
 
-<div class="topbar">
-  <div class="brand-mark">JGTS / CV</div>
-  <button class="toggle" id="themeToggle" aria-label="Alternar tema">
-    <svg id="toggleIcon" viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"></circle><line x1="12" y1="1.5" x2="12" y2="4"></line><line x1="12" y1="20" x2="12" y2="22.5"></line><line x1="4.2" y1="4.2" x2="6" y2="6"></line><line x1="18" y1="18" x2="19.8" y2="19.8"></line><line x1="1.5" y1="12" x2="4" y2="12"></line><line x1="20" y1="12" x2="22.5" y2="12"></line><line x1="4.2" y1="19.8" x2="6" y2="18"></line><line x1="18" y1="6" x2="19.8" y2="4.2"></line></svg>
-    <span id="toggleLabel">Escuro</span>
-  </button>
+<div class="shell">
+
+  <!-- ═════════════ Barra lateral ═════════════ -->
+  <aside class="side">
+    <div class="side-inner">
+      <div>
+        <div class="id">
+          <div class="avatar">JG</div>
+          <div>
+            <div class="id-name">João Guilherme<br>Trovão da Silva</div>
+          </div>
+        </div>
+        <p class="role" style="margin:14px 0 0;"><strong>Analista Financeiro</strong> com foco em tecnologia — crio sistemas que substituem planilhas e tornam processos mais rápidos e confiáveis.</p>
+        <span class="status"><span class="pulse"></span>Aberto a oportunidades</span>
+      </div>
+
+      <div>
+        <div class="side-label">Contato</div>
+        <ul class="contact">
+          <li><a href="tel:+5541998546728"><svg class="i"><use href="#i-phone"/></svg><span class="mono">(41) 99854-6728</span></a></li>
+          <li><a href="mailto:joao_guilherme2002@outlook.com"><svg class="i"><use href="#i-mail"/></svg><span class="em">joao_guilherme2002@outlook.com</span></a></li>
+          <li><span class="row"><svg class="i"><use href="#i-linkedin"/></svg>LinkedIn</span></li>
+          <li><span class="row"><svg class="i"><use href="#i-pin"/></svg>Pinhais, Paraná — Brasil</span></li>
+        </ul>
+      </div>
+
+      <nav class="nav-block" aria-label="Seções">
+        <div class="side-label">Navegação</div>
+        <div class="nav">
+          <a href="#resumo" data-spy="resumo"><svg class="i"><use href="#i-grid"/></svg>Visão geral</a>
+          <a href="#sistema" data-spy="sistema"><svg class="i"><use href="#i-cpu"/></svg>Sistema Financeiro<span class="new">Destaque</span></a>
+          <a href="#metodo" data-spy="metodo"><svg class="i"><use href="#i-route"/></svg>Como eu trabalho</a>
+          <a href="#modelagem" data-spy="modelagem"><svg class="i"><use href="#i-chart"/></svg>Modelagem financeira</a>
+          <a href="#experiencia" data-spy="experiencia"><svg class="i"><use href="#i-brief"/></svg>Experiência</a>
+          <a href="#competencias" data-spy="competencias"><svg class="i"><use href="#i-star"/></svg>Competências</a>
+          <a href="#ferramentas" data-spy="ferramentas"><svg class="i"><use href="#i-wrench"/></svg>Ferramentas</a>
+          <a href="#formacao" data-spy="formacao"><svg class="i"><use href="#i-cap"/></svg>Formação</a>
+        </div>
+      </nav>
+
+      <div class="side-actions">
+        <button class="sbtn primary" id="copyEmailBtn" type="button"><svg class="i"><use href="#i-copy"/></svg>Copiar e-mail</button>
+        <div class="sbtn-row">
+          <button class="sbtn" id="printBtn" type="button"><svg class="i"><use href="#i-download"/></svg>PDF</button>
+          <button class="sbtn" id="themeToggle" type="button" aria-label="Alternar tema"><svg class="i" id="themeIcon"><use href="#i-moon"/></svg><span id="themeLabel">Escuro</span></button>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ═════════════ Conteúdo ═════════════ -->
+  <main class="main">
+
+    <div class="crumbs">
+      <div>Currículo<span class="sep">/</span><b>Visão geral</b></div>
+      <div class="upd">Atualizado em <span class="mono">nov/2026</span></div>
+    </div>
+
+    <!-- Visão geral -->
+    <div id="resumo" style="scroll-margin-top:24px;">
+      <div class="card hero">
+        <div class="eyebrow">Resumo profissional</div>
+        <h1>Finanças com <em>mentalidade de sistema</em>: menos planilhas, mais análise.</h1>
+        <p>Profissional da área financeira com experiência em contas a pagar e a receber, análise de crédito e risco, conciliação bancária e fluxo de caixa. Uno a rotina financeira ao desenvolvimento de <strong>soluções tecnológicas que substituem planilhas</strong>, padronizam processos e liberam tempo da equipe para o que importa: a análise e a tomada de decisão.</p>
+        <p>Criei, de ponta a ponta, um sistema web de gestão financeira multiempresa usado na rotina do escritório. Perfil analítico e organizado, com Excel avançado, Lean Six Sigma (White Belt) e uso prático de IA para eliminar tarefas manuais. Cursando Tecnólogo em Gestão Financeira (conclusão em 2027).</p>
+      </div>
+
+      <div class="kpis">
+        <div class="card kpi">
+          <div class="kpi-ic ic-brand"><svg class="i"><use href="#i-layers"/></svg></div>
+          <div class="kpi-label">Módulos no Sistema Financeiro</div>
+          <div class="kpi-val mono">26</div>
+        </div>
+        <div class="card kpi">
+          <div class="kpi-ic ic-emerald"><svg class="i"><use href="#i-git"/></svg></div>
+          <div class="kpi-label">Entregas versionadas desde ago/26</div>
+          <div class="kpi-val mono">390+</div>
+        </div>
+        <div class="card kpi">
+          <div class="kpi-ic ic-amber"><svg class="i"><use href="#i-brief"/></svg></div>
+          <div class="kpi-label">Experiências profissionais</div>
+          <div class="kpi-val mono">05</div>
+        </div>
+        <div class="card kpi">
+          <div class="kpi-ic ic-slate"><svg class="i"><use href="#i-cap"/></svg></div>
+          <div class="kpi-label">Conclusão — Gestão Financeira</div>
+          <div class="kpi-val mono">2027</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sistema Financeiro -->
+    <section id="sistema">
+      <div class="sec-head">
+        <div>
+          <div class="eyebrow">Projeto em destaque</div>
+          <h2>Sistema Financeiro — da planilha ao sistema</h2>
+        </div>
+      </div>
+
+      <div class="card feature">
+        <div class="feature-top">
+          <div class="ft-row">
+            <div class="ft-logo"><svg class="i"><use href="#i-wallet"/></svg></div>
+            <div>
+              <div class="ft-title">Plataforma web de gestão financeira</div>
+              <div class="ft-sub">Projeto autoral · Innove · <span class="mono">ago/2026 — atual</span></div>
+            </div>
+            <div class="badges">
+              <span class="badge ok"><span class="d"></span>Em uso</span>
+              <span class="badge brand">Multiempresa</span>
+              <span class="badge">Concepção ao deploy</span>
+            </div>
+          </div>
+          <p class="ft-lede">Identifiquei que boa parte do tempo da equipe ia para manter, conferir e consolidar planilhas. Desenhei e desenvolvi um sistema que reúne fluxo de caixa, projeções, faturamento, inadimplência e cadastros em uma <strong>base única</strong>, com permissões por usuário e trilha de auditoria — automatizando cálculos e conferências que antes eram feitos à mão.</p>
+        </div>
+
+        <div class="ba">
+          <div class="ba-col before">
+            <div class="ba-h">Antes · planilhas</div>
+            <ul>
+              <li><svg class="i"><use href="#i-x"/></svg>Controles espalhados em vários arquivos, um por empresa</li>
+              <li><svg class="i"><use href="#i-x"/></svg>Conferência de faturamento e inadimplência linha a linha</li>
+              <li><svg class="i"><use href="#i-x"/></svg>Projeções refeitas manualmente a cada mês</li>
+              <li><svg class="i"><use href="#i-x"/></svg>Sem histórico de quem alterou o quê</li>
+            </ul>
+          </div>
+          <div class="ba-col after">
+            <div class="ba-h">Depois · sistema</div>
+            <ul>
+              <li><svg class="i"><use href="#i-check"/></svg>Base única e consolidada para todas as empresas</li>
+              <li><svg class="i"><use href="#i-check"/></svg>Importação de CSV, conferência guiada e exportação Excel/PDF</li>
+              <li><svg class="i"><use href="#i-check"/></svg>Motor de projeção com reajustes, índices e projetado × realizado</li>
+              <li><svg class="i"><use href="#i-check"/></svg>Auditoria, backup e permissões por perfil de usuário</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="mock-wrap" aria-hidden="true">
+          <div class="mock">
+            <div class="mock-bar">
+              <div class="mock-dots"><i></i><i></i><i></i></div>
+              <div class="mock-brand"><span></span>Sistema Financeiro</div>
+              <div class="mock-tab on">Fluxo de Caixa</div>
+              <div class="mock-tab">Projeções &amp; Relatórios</div>
+              <div class="mock-tab">Faturamento &amp; Clientes</div>
+            </div>
+            <div class="mock-body">
+              <div class="mk"><div class="mk-l">Saldo em caixa</div><div class="mk-v mono">R$ 184,2 mil</div><div class="mk-d mono up">▲ 6,4% no mês</div></div>
+              <div class="mk"><div class="mk-l">Receitas do mês</div><div class="mk-v mono up">R$ 96,8 mil</div><div class="mk-d mono" style="color:var(--muted)">98% do projetado</div></div>
+              <div class="mk"><div class="mk-l">Despesas do mês</div><div class="mk-v mono down">R$ 71,5 mil</div><div class="mk-d mono" style="color:var(--muted)">102% do projetado</div></div>
+              <div class="mk chart">
+                <div style="display:flex; justify-content:space-between; align-items:center; gap:8px;">
+                  <div class="mk-l">Projetado × realizado</div>
+                  <div class="legend"><span><i style="background:var(--border)"></i>Proj.</span><span><i style="background:var(--brand)"></i>Real.</span></div>
+                </div>
+                <svg viewBox="0 0 240 62" preserveAspectRatio="none">
+                  <g fill="var(--border)">
+                    <rect x="4" y="22" width="12" height="40" rx="2"/><rect x="44" y="18" width="12" height="44" rx="2"/><rect x="84" y="14" width="12" height="48" rx="2"/><rect x="124" y="16" width="12" height="46" rx="2"/><rect x="164" y="10" width="12" height="52" rx="2"/><rect x="204" y="8" width="12" height="54" rx="2"/>
+                  </g>
+                  <g fill="var(--brand)">
+                    <rect x="18" y="26" width="12" height="36" rx="2"/><rect x="58" y="16" width="12" height="46" rx="2"/><rect x="98" y="18" width="12" height="44" rx="2"/><rect x="138" y="12" width="12" height="50" rx="2"/><rect x="178" y="12" width="12" height="50" rx="2"/><rect x="218" y="4" width="12" height="58" rx="2"/>
+                  </g>
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div class="mock-cap">Representação da interface · valores ilustrativos</div>
+        </div>
+
+        <div class="modules">
+          <div class="mod">
+            <div class="mod-h"><span class="kpi-ic ic-brand"><svg class="i"><use href="#i-wallet"/></svg></span>Fluxo de Caixa</div>
+            <p>Realizado e projetado diário, contas a pagar, lançamentos, comparativos mensais, tarefas e notificações.</p>
+          </div>
+          <div class="mod">
+            <div class="mod-h"><span class="kpi-ic ic-emerald"><svg class="i"><use href="#i-trend"/></svg></span>Projeções &amp; Relatórios</div>
+            <p>DRE gerencial, forecast × realizado, impostos projetados e índices de correção para reajustes.</p>
+          </div>
+          <div class="mod">
+            <div class="mod-h"><span class="kpi-ic ic-amber"><svg class="i"><use href="#i-receipt"/></svg></span>Faturamento &amp; Clientes</div>
+            <p>Conferência e fechamento de faturamento, descontos e multas, inadimplência com simulador e gestão de IRPF.</p>
+          </div>
+          <div class="mod">
+            <div class="mod-h"><span class="kpi-ic ic-slate"><svg class="i"><use href="#i-users"/></svg></span>Pessoal &amp; Recorrências</div>
+            <p>Funcionários e encargos, 13º salário, benefícios, compras recorrentes, reembolsos e fornecedores.</p>
+          </div>
+          <div class="mod">
+            <div class="mod-h"><span class="kpi-ic ic-slate"><svg class="i"><use href="#i-shield"/></svg></span>Governança</div>
+            <p>Plano de contas, contas bancárias, multiempresa, backup, auditoria de alterações e gestão de usuários.</p>
+          </div>
+          <div class="mod">
+            <div class="mod-h"><span class="kpi-ic ic-brand"><svg class="i"><use href="#i-gauge"/></svg></span>Visão geral</div>
+            <p>Dashboard consolidado com KPIs, gráficos e modo apresentação para reuniões com gestores e clientes.</p>
+          </div>
+        </div>
+
+        <div class="stack">
+          <span class="stack-l">Tecnologias:</span>
+          <span class="chip">Next.js</span>
+          <span class="chip">React</span>
+          <span class="chip">TypeScript</span>
+          <span class="chip">Supabase · PostgreSQL</span>
+          <span class="chip">Tailwind CSS</span>
+          <span class="chip">Recharts</span>
+          <span class="chip">Excel / PDF</span>
+          <span class="chip">Desenvolvimento assistido por IA</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Método -->
+    <section id="metodo">
+      <div class="sec-head">
+        <div>
+          <div class="eyebrow">Produtividade em processos</div>
+          <h2>Como eu trabalho</h2>
+        </div>
+        <div class="sec-note">Da rotina manual à solução automatizada</div>
+      </div>
+      <div class="steps">
+        <div class="card step">
+          <div class="step-n mono">01</div>
+          <div class="step-t">Mapear</div>
+          <p>Entendo o processo atual, as planilhas usadas e onde está o retrabalho.</p>
+        </div>
+        <div class="card step">
+          <div class="step-n mono">02</div>
+          <div class="step-t">Padronizar</div>
+          <p>Defino regras de negócio, plano de contas e fluxos — base Lean Six Sigma.</p>
+        </div>
+        <div class="card step">
+          <div class="step-n mono">03</div>
+          <div class="step-t">Automatizar</div>
+          <p>Transformo a rotina em sistema, fórmulas ou fluxos com IA, eliminando etapas manuais.</p>
+        </div>
+        <div class="card step">
+          <div class="step-n mono">04</div>
+          <div class="step-t">Medir</div>
+          <p>Acompanho indicadores e projetado × realizado para ajustar e melhorar.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Modelagem financeira -->
+    <section id="modelagem">
+      <div class="sec-head">
+        <div>
+          <div class="eyebrow">Especialidade</div>
+          <h2>Modelagem financeira integrada</h2>
+        </div>
+        <div class="sec-note">Estrutura IFRS 18 / CPC 51 · múltiplas entidades</div>
+      </div>
+      <div class="fin-grid">
+        <div class="card fin">
+          <div class="fin-k"><b>DRE</b><span>Demonstração do Resultado</span></div>
+          <p>Receitas, custos e despesas estruturados por categoria operacional, de investimento e de financiamento.</p>
+        </div>
+        <div class="card fin">
+          <div class="fin-k"><b>DFC</b><span>Fluxo de Caixa</span></div>
+          <p>Entradas e saídas projetadas × realizadas, com acompanhamento de desvios e liquidez.</p>
+        </div>
+        <div class="card fin">
+          <div class="fin-k"><b>BP</b><span>Balanço Patrimonial</span></div>
+          <p>Ativos, passivos e patrimônio líquido consolidados, com capital de giro estruturado.</p>
+        </div>
+      </div>
+      <div class="fin-extra">
+        <span class="chip">Patrimônio líquido</span>
+        <span class="chip">Capital de giro</span>
+        <span class="chip">Capex &amp; depreciação</span>
+        <span class="chip">Orçado × realizado</span>
+      </div>
+    </section>
+
+    <!-- Experiência -->
+    <section id="experiencia">
+      <div class="sec-head">
+        <div>
+          <div class="eyebrow">Trajetória</div>
+          <h2>Experiência profissional</h2>
+        </div>
+      </div>
+      <div class="card xp">
+        <div class="job">
+          <div class="job-when"><div class="now"><span class="d"></span>Atual</div><span class="mono">mai/2026 — hoje</span></div>
+          <div>
+            <div class="job-t">Assistente Financeiro Pleno</div>
+            <div class="job-o">Innove Soluções Empresariais · Pinhais, PR</div>
+            <ul>
+              <li class="hl"><svg class="i"><use href="#i-cpu"/></svg><strong>Criação do Sistema Financeiro</strong>: plataforma web multiempresa que substituiu planilhas de controle por uma base única, com projeções automáticas, conferência de faturamento, inadimplência e auditoria.</li>
+              <li>Responsável por contas a pagar e a receber, conciliação bancária, fluxo de caixa e emissão de relatórios gerenciais.</li>
+              <li>Padronização de processos, reduzindo retrabalho e minimizando erros operacionais.</li>
+              <li>Comparativos entre projeção e realizado, apoiando o acompanhamento de desvios.</li>
+              <li>Estruturação de indicadores e relatórios com foco em visão gerencial.</li>
+              <li>Aplicação de ferramentas de IA na melhoria de processos financeiros, reduzindo tarefas manuais.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="job">
+          <div class="job-when"><span class="mono">set/2024 — mai/2026</span><br>1 ano e 9 meses</div>
+          <div>
+            <div class="job-t">Assistente Financeiro</div>
+            <div class="job-o">Jandira Alimentos · Brasil</div>
+            <ul>
+              <li>Análise de crédito e risco, contas a receber, contas a pagar e conciliação bancária.</li>
+              <li>Controle de fluxo de caixa, análise de inadimplência e cobrança estratégica.</li>
+              <li>Organização e registro de lançamentos contábeis para suporte à tomada de decisão.</li>
+              <li>Elaboração de relatórios gerenciais e apoio em auditorias.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="job">
+          <div class="job-when"><span class="mono">fev/2024 — mar/2024</span><br>2 meses</div>
+          <div>
+            <div class="job-t">Estagiário de Garantia da Qualidade</div>
+            <div class="job-o">Inventus Power · Manaus, AM</div>
+            <ul>
+              <li>Testes de confiabilidade elétricos e mecânicos em componentes eletrônicos, conforme especificações dos clientes.</li>
+              <li>Metalografia (cross section) em soldagem de componentes SMT e PTH.</li>
+              <li>Análise de falhas, relatórios técnicos e acompanhamento de auditorias em laboratório.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="job">
+          <div class="job-when"><span class="mono">jan/2022 — jan/2023</span><br>1 ano e 1 mês</div>
+          <div>
+            <div class="job-t">Assistente Administrativo</div>
+            <div class="job-o">I3M Engenharia · Manaus, AM</div>
+          </div>
+        </div>
+        <div class="job">
+          <div class="job-when"><span class="mono">mar/2020 — mar/2021</span><br>1 ano e 1 mês</div>
+          <div>
+            <div class="job-t">Estagiário</div>
+            <div class="job-o">Instituto Federal do Amazonas (IFAM) · Manaus, AM</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Competências -->
+    <section id="competencias">
+      <div class="sec-head">
+        <div>
+          <div class="eyebrow">Habilidades</div>
+          <h2>Principais competências</h2>
+        </div>
+      </div>
+      <div class="comp">
+        <div class="card">
+          <div class="comp-h"><span class="kpi-ic ic-brand"><svg class="i"><use href="#i-scale"/></svg></span>Finanças</div>
+          <div class="chips">
+            <span class="chip key">Modelagem financeira</span>
+            <span class="chip key">Fluxo de caixa</span>
+            <span class="chip">Análise financeira</span>
+            <span class="chip">Crédito e risco</span>
+            <span class="chip">Projeção × realizado</span>
+            <span class="chip">Conciliação bancária</span>
+            <span class="chip">Contas a pagar e receber</span>
+            <span class="chip">Cobrança estratégica</span>
+            <span class="chip">Lançamentos contábeis</span>
+          </div>
+        </div>
+        <div class="card">
+          <div class="comp-h"><span class="kpi-ic ic-emerald"><svg class="i"><use href="#i-cpu"/></svg></span>Tecnologia &amp; processos</div>
+          <div class="chips">
+            <span class="chip key">Substituição de planilhas por sistemas</span>
+            <span class="chip key">Automação de rotinas</span>
+            <span class="chip">Relatórios gerenciais e KPIs</span>
+            <span class="chip">Dashboards</span>
+            <span class="chip">Modelagem de dados</span>
+            <span class="chip">Padronização de processos</span>
+            <span class="chip">IA aplicada</span>
+          </div>
+        </div>
+        <div class="card">
+          <div class="comp-h"><span class="kpi-ic ic-amber"><svg class="i"><use href="#i-target"/></svg></span>Perfil</div>
+          <div class="chips">
+            <span class="chip">Organização</span>
+            <span class="chip">Perfil analítico</span>
+            <span class="chip">Atenção a detalhes</span>
+            <span class="chip">Orientação a resultados</span>
+            <span class="chip">Integração financeiro-contábil</span>
+            <span class="chip">Autonomia</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Ferramentas -->
+    <section id="ferramentas">
+      <div class="sec-head">
+        <div>
+          <div class="eyebrow">Stack</div>
+          <h2>Ferramentas &amp; métodos</h2>
+        </div>
+      </div>
+      <div class="tools-wrap">
+        <div class="card tools">
+          <div class="tool">
+            <span class="kpi-ic ic-emerald"><svg class="i"><use href="#i-sheet"/></svg></span>
+            <div><div class="tool-n">Excel avançado</div><div class="tool-d">Tabelas dinâmicas e fórmulas</div></div>
+            <div class="lvl-box"><div class="lvl"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></div><div class="lvl-t">Avançado</div></div>
+          </div>
+          <div class="tool">
+            <span class="kpi-ic ic-brand"><svg class="i"><use href="#i-db"/></svg></span>
+            <div><div class="tool-n">ERP Sankhya</div><div class="tool-d">Rotinas financeiras diárias</div></div>
+            <div class="lvl-box"><div class="lvl"><i class="on"></i><i class="on"></i><i class="on"></i><i></i></div><div class="lvl-t">Proficiente</div></div>
+          </div>
+          <div class="tool">
+            <span class="kpi-ic ic-brand"><svg class="i"><use href="#i-wallet"/></svg></span>
+            <div><div class="tool-n">Conta Azul</div><div class="tool-d">Gestão financeira e contábil</div></div>
+            <div class="lvl-box"><div class="lvl"><i class="on"></i><i class="on"></i><i class="on"></i><i></i></div><div class="lvl-t">Proficiente</div></div>
+          </div>
+          <div class="tool">
+            <span class="kpi-ic ic-slate"><svg class="i"><use href="#i-scale"/></svg></span>
+            <div><div class="tool-n">Sistemas Thomson Reuters</div><div class="tool-d">Suporte fiscal e contábil</div></div>
+            <div class="lvl-box"><div class="lvl"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></div><div class="lvl-t">Avançado</div></div>
+          </div>
+        </div>
+        <div class="card tools">
+          <div class="tool">
+            <span class="kpi-ic ic-brand"><svg class="i"><use href="#i-code"/></svg></span>
+            <div><div class="tool-n">Desenvolvimento web</div><div class="tool-d">Next.js, React, TypeScript, Supabase</div></div>
+            <div class="lvl-box"><div class="lvl"><i class="on"></i><i class="on"></i><i class="on"></i><i></i></div><div class="lvl-t">Proficiente</div></div>
+          </div>
+          <div class="tool">
+            <span class="kpi-ic ic-amber"><svg class="i"><use href="#i-sparkle"/></svg></span>
+            <div><div class="tool-n">IA aplicada a processos</div><div class="tool-d">Redução de tarefas manuais</div></div>
+            <div class="lvl-box"><div class="lvl"><i class="on"></i><i class="on"></i><i class="on"></i><i></i></div><div class="lvl-t">Proficiente</div></div>
+          </div>
+          <div class="tool">
+            <span class="kpi-ic ic-slate"><svg class="i"><use href="#i-target"/></svg></span>
+            <div><div class="tool-n">Lean Six Sigma — White Belt</div><div class="tool-d">Padronização de processos</div></div>
+            <div class="lvl-box"><div class="lvl"><i class="on"></i><i class="on"></i><i></i><i></i></div><div class="lvl-t">Intermediário</div></div>
+          </div>
+          <div class="tool">
+            <span class="kpi-ic ic-emerald"><svg class="i"><use href="#i-chart"/></svg></span>
+            <div><div class="tool-n">Dashboards e relatórios</div><div class="tool-d">KPIs, gráficos e exportação Excel/PDF</div></div>
+            <div class="lvl-box"><div class="lvl"><i class="on"></i><i class="on"></i><i class="on"></i><i></i></div><div class="lvl-t">Proficiente</div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Formação -->
+    <section id="formacao">
+      <div class="sec-head">
+        <div>
+          <div class="eyebrow">Educação</div>
+          <h2>Formação e certificações</h2>
+        </div>
+      </div>
+      <div class="edu-grid">
+        <div class="card">
+          <div class="edu-h">Formação acadêmica</div>
+          <div class="edu">
+            <span class="kpi-ic ic-brand"><svg class="i"><use href="#i-cap"/></svg></span>
+            <div><div class="edu-n">Tecnólogo em Gestão Financeira</div><div class="edu-w">Faculdade Descomplica · <span class="mono">ago/2026 — ago/2027</span></div></div>
+          </div>
+          <div class="edu">
+            <span class="kpi-ic ic-slate"><svg class="i"><use href="#i-wrench"/></svg></span>
+            <div><div class="edu-n">Técnico em Mecânica — Manutenção Mecânica</div><div class="edu-w">IFAM · <span class="mono">2018 — 2020</span></div></div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="edu-h">Certificações</div>
+          <div class="edu">
+            <span class="kpi-ic ic-emerald"><svg class="i"><use href="#i-award"/></svg></span>
+            <div><div class="edu-n">Regimes Tributários na Prática</div></div>
+          </div>
+          <div class="edu">
+            <span class="kpi-ic ic-emerald"><svg class="i"><use href="#i-award"/></svg></span>
+            <div><div class="edu-n">Lean Six Sigma — White Belt</div></div>
+          </div>
+          <div class="edu">
+            <span class="kpi-ic ic-emerald"><svg class="i"><use href="#i-award"/></svg></span>
+            <div><div class="edu-n">Excel do Básico ao Avançado: Excel Extremo</div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <span>© 2026 João Guilherme Trovão da Silva</span>
+      <span><a href="mailto:joao_guilherme2002@outlook.com">joao_guilherme2002@outlook.com</a> · <span class="mono">(41) 99854-6728</span></span>
+    </footer>
+  </main>
 </div>
 
-<div class="wrap">
-
-  <header class="hero">
-    <div class="eyebrow">Currículo · Pinhais, Paraná, Brasil</div>
-    <h1>João Guilherme<br><em>Trovão da Silva</em></h1>
-    <div class="role-line">Análise Financeira — Fluxo de Caixa — Indicadores e Relatórios Gerenciais</div>
-    <div class="highlight-badge">
-      <span class="dot-ping"></span>
-      <span>Especialista em Modelagem Financeira — DRE · DFC · BP</span>
-    </div>
-    <div class="contact-row">
-      <span><a href="tel:+5541998546728">(41) 99854-6728</a></span>
-      <span><a href="mailto:joao_guilherme2002@outlook.com">joao_guilherme2002@outlook.com</a></span>
-      <span>LinkedIn</span>
-      <span>Pinhais, PR</span>
-    </div>
-
-    <div class="cta-row">
-      <button class="btn primary" id="copyEmailBtn" type="button">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="M3 7l9 6 9-6"></path></svg>
-        <span id="copyEmailLabel">Copiar e-mail</span>
-      </button>
-      <button class="btn" id="printBtn" type="button">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9V3h12v6"></path><rect x="4" y="9" width="16" height="8" rx="1"></rect><path d="M6 15h12v6H6z"></path></svg>
-        <span>Baixar em PDF</span>
-      </button>
-    </div>
-
-    <div class="stats">
-      <div class="stat">
-        <div class="num">05</div>
-        <div class="label">Experiências profissionais</div>
-      </div>
-      <div class="stat">
-        <div class="num">03</div>
-        <div class="label">Sistemas — Sankhya, Conta Azul, TR</div>
-      </div>
-      <div class="stat">
-        <div class="num">2027</div>
-        <div class="label">Conclusão — Gestão Financeira</div>
-      </div>
-    </div>
-  </header>
-
-  <section id="resumo">
-    <div class="sec-head">
-      <span class="sec-index">§ 01</span>
-      <span class="sec-title">Resumo profissional</span>
-      <span class="sec-rule"></span>
-    </div>
-    <p class="lede">
-      Profissional da área financeira com experiência em contas a pagar, contas a receber, análise de crédito e risco, conciliação bancária e controle de fluxo de caixa, em busca de posição como <strong>Analista Financeiro</strong>. Atuação no suporte à gestão financeira por meio da estruturação de indicadores, comparativos entre projeção e realizado e relatórios gerenciais, transformando dados operacionais em informações estratégicas para a tomada de decisão.
-      <span class="muted">Perfil analítico, organizado e orientado a resultados, com domínio de Excel avançado (tabelas dinâmicas e fórmulas) e experiência no relacionamento entre os setores financeiro e contábil. Atualmente cursando Tecnólogo em Gestão Financeira na Faculdade Descomplica, com conclusão prevista para 2027.</span>
-    </p>
-  </section>
-
-  <section id="modelagem">
-    <div class="sec-head">
-      <span class="sec-index">§ 02</span>
-      <span class="sec-title">Modelagem Financeira</span>
-      <span class="sec-rule"></span>
-    </div>
-    <div class="feature-card">
-      <div class="feature-top">
-        <span class="feature-badge">Destaque</span>
-      </div>
-      <p class="feature-lede">
-        Construção de modelos financeiros completos e integrados a partir das três demonstrações — usados para dar visão gerencial real a empresas e escritórios de contabilidade, com estrutura contábil (IFRS 18 / CPC 51) aplicada a múltiplas entidades.
-      </p>
-      <div class="feature-grid">
-        <div class="feature-item">
-          <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8"></path><path d="M15 7h6v6"></path></svg></div>
-          <div class="feature-name">DRE</div>
-          <div class="feature-full">Demonstração de Resultado</div>
-          <div class="feature-desc">Receitas, custos e despesas estruturados por categoria operacional, de investimento e de financiamento.</div>
-        </div>
-        <div class="feature-item">
-          <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l3-8 4 16 3-8h4"></path></svg></div>
-          <div class="feature-name">DFC</div>
-          <div class="feature-full">Fluxo de Caixa</div>
-          <div class="feature-desc">Entradas e saídas projetadas x realizadas, com acompanhamento de desvios e liquidez.</div>
-        </div>
-        <div class="feature-item">
-          <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 21V10M10 21V4M16 21v-7M22 21H2"></path></svg></div>
-          <div class="feature-name">BP</div>
-          <div class="feature-full">Balanço Patrimonial</div>
-          <div class="feature-desc">Ativos, passivos e patrimônio líquido consolidados, com capital de giro estruturado.</div>
-        </div>
-      </div>
-      <div class="feature-extra">
-        <span class="tag-pill">Patrimônio Líquido</span>
-        <span class="tag-pill">Capital de Giro</span>
-        <span class="tag-pill">Capex &amp; Depreciação</span>
-        <span class="tag-pill">Orçado x Realizado</span>
-      </div>
-    </div>
-  </section>
-
-  <section id="perfil">
-    <div class="sec-head">
-      <span class="sec-index">§ 03</span>
-      <span class="sec-title">Perfil comportamental</span>
-      <span class="sec-rule"></span>
-    </div>
-    <div class="profile-grid">
-      <div class="radar-box">
-        <svg viewBox="0 0 340 300" class="radar" role="img" aria-label="Gráfico de radar do perfil comportamental">
-          <polygon class="ring" points="170,60 255.6,122.2 222.9,222.8 117.1,222.8 84.4,122.2"></polygon>
-          <polygon class="ring" points="170,82.5 234.2,129.1 209.7,204.6 130.3,204.6 105.8,129.1"></polygon>
-          <polygon class="ring" points="170,105 212.8,136.1 196.5,186.4 143.5,186.4 127.2,136.1"></polygon>
-          <polygon class="ring" points="170,127.5 191.4,143.05 183.2,168.2 156.8,168.2 148.6,143.05"></polygon>
-          <line class="spoke" x1="170" y1="150" x2="170" y2="60"></line>
-          <line class="spoke" x1="170" y1="150" x2="255.6" y2="122.2"></line>
-          <line class="spoke" x1="170" y1="150" x2="222.9" y2="222.8"></line>
-          <line class="spoke" x1="170" y1="150" x2="117.1" y2="222.8"></line>
-          <line class="spoke" x1="170" y1="150" x2="84.4" y2="122.2"></line>
-          <polygon class="data" points="170,64.5 248.8,124.4 216.6,214.1 126.6,209.7 87.8,123.3"></polygon>
-          <circle class="pt" data-name="Organização" data-val="95" cx="170" cy="64.5" r="3"></circle>
-          <circle class="pt" data-name="Perfil analítico" data-val="92" cx="248.8" cy="124.4" r="3"></circle>
-          <circle class="pt" data-name="Orientação a resultados" data-val="88" cx="216.6" cy="214.1" r="3"></circle>
-          <circle class="pt" data-name="Comunicação fin.-contábil" data-val="82" cx="126.6" cy="209.7" r="3"></circle>
-          <circle class="pt" data-name="Atenção a detalhes" data-val="96" cx="87.8" cy="123.3" r="3"></circle>
-          <text class="axis-label" x="170" y="44" text-anchor="middle">Organização</text>
-          <text class="axis-label" x="270.8" y="117.25" text-anchor="start"><tspan x="270.8" dy="0">Perfil</tspan><tspan x="270.8" dy="11">analítico</tspan></text>
-          <text class="axis-label" x="232.3" y="235.75" text-anchor="start"><tspan x="232.3" dy="0">Orientação a</tspan><tspan x="232.3" dy="11">resultados</tspan></text>
-          <text class="axis-label" x="107.7" y="235.75" text-anchor="end"><tspan x="107.7" dy="0">Comunicação</tspan><tspan x="107.7" dy="11">fin.-contábil</tspan></text>
-          <text class="axis-label" x="69.2" y="117.25" text-anchor="end"><tspan x="69.2" dy="0">Atenção a</tspan><tspan x="69.2" dy="11">detalhes</tspan></text>
-        </svg>
-        <div class="radar-tip" id="radarTip"></div>
-      </div>
-      <div class="profile-copy">
-        <p class="lede" style="max-width:none;">
-          Autoavaliação com base na atuação diária em rotinas financeiras: organização de dados, leitura analítica de indicadores e comunicação entre os setores financeiro e contábil.
-        </p>
-        <ul class="qual-list">
-          <li><span class="qual-name">Organização</span><span class="qual-note">estruturação de planilhas e controles</span></li>
-          <li><span class="qual-name">Perfil analítico</span><span class="qual-note">leitura de dados para decisão</span></li>
-          <li><span class="qual-name">Orientação a resultados</span><span class="qual-note">redução de retrabalho e erros</span></li>
-          <li><span class="qual-name">Comunicação financeiro-contábil</span><span class="qual-note">integração entre setores</span></li>
-          <li><span class="qual-name">Atenção a detalhes</span><span class="qual-note">precisão em conciliação e fluxo de caixa</span></li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <section id="competencias">
-    <div class="sec-head">
-      <span class="sec-index">§ 04</span>
-      <span class="sec-title">Principais competências</span>
-      <span class="sec-rule"></span>
-    </div>
-    <div class="comp-grid">
-      <div class="comp-item highlight-row"><span>Modelagem Financeira (DRE/DFC/BP)</span><span class="tag">destaque</span></div>
-      <div class="comp-item"><span>Análise Financeira</span><span class="tag">core</span></div>
-      <div class="comp-item"><span>Análise de Crédito e Risco</span><span class="tag">core</span></div>
-      <div class="comp-item"><span>Comparativo Projeção x Realizado</span><span class="tag">core</span></div>
-      <div class="comp-item"><span>Relatórios Gerenciais e KPIs</span><span class="tag">core</span></div>
-      <div class="comp-item"><span>Fluxo de Caixa</span><span class="tag">core</span></div>
-      <div class="comp-item"><span>Conciliação Bancária</span><span class="tag">core</span></div>
-      <div class="comp-item"><span>Contas a Pagar e a Receber</span><span class="tag">rotina</span></div>
-      <div class="comp-item"><span>Cobrança Estratégica</span><span class="tag">rotina</span></div>
-      <div class="comp-item"><span>Lançamentos Contábeis</span><span class="tag">rotina</span></div>
-    </div>
-  </section>
-
-  <section id="ferramentas">
-    <div class="sec-head">
-      <span class="sec-index">§ 05</span>
-      <span class="sec-title">Ferramentas &amp; métodos</span>
-      <span class="sec-rule"></span>
-    </div>
-    <div class="tool-grid">
-      <div class="tool-item">
-        <div class="tool-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="3" y1="15" x2="21" y2="15"></line><line x1="9" y1="3" x2="9" y2="21"></line><line x1="15" y1="3" x2="15" y2="21"></line></svg></div>
-        <div class="tool-info">
-          <div class="tool-name">Excel Avançado</div>
-          <div class="tool-note">Tabelas dinâmicas e fórmulas</div>
-          <div class="dots"><span class="dot on"></span><span class="dot on"></span><span class="dot on"></span><span class="dot on"></span></div>
-        </div>
-      </div>
-      <div class="tool-item">
-        <div class="tool-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="8" ry="3"></ellipse><path d="M4 5v14c0 1.7 3.6 3 8 3s8-1.3 8-3V5"></path><path d="M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"></path></svg></div>
-        <div class="tool-info">
-          <div class="tool-name">ERP Sankhya</div>
-          <div class="tool-note">Rotinas financeiras diárias</div>
-          <div class="dots"><span class="dot on"></span><span class="dot on"></span><span class="dot on"></span><span class="dot"></span></div>
-        </div>
-      </div>
-      <div class="tool-item">
-        <div class="tool-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="14" rx="2"></rect><path d="M2 10h20"></path><circle cx="17" cy="14" r="1.3"></circle></svg></div>
-        <div class="tool-info">
-          <div class="tool-name">Conta Azul</div>
-          <div class="tool-note">Gestão financeira e contábil</div>
-          <div class="dots"><span class="dot on"></span><span class="dot on"></span><span class="dot on"></span><span class="dot"></span></div>
-        </div>
-      </div>
-      <div class="tool-item">
-        <div class="tool-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18"></path><path d="M5 7h14"></path><path d="M5 7l-3 6a3 3 0 0 0 6 0z"></path><path d="M19 7l-3 6a3 3 0 0 0 6 0z"></path></svg></div>
-        <div class="tool-info">
-          <div class="tool-name">Sistemas Thomson Reuters</div>
-          <div class="tool-note">Suporte fiscal e contábil</div>
-          <div class="dots"><span class="dot on"></span><span class="dot on"></span><span class="dot on"></span><span class="dot on"></span></div>
-        </div>
-      </div>
-      <div class="tool-item">
-        <div class="tool-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><circle cx="12" cy="12" r="5"></circle><circle cx="12" cy="12" r="1"></circle></svg></div>
-        <div class="tool-info">
-          <div class="tool-name">Lean Six Sigma — White Belt</div>
-          <div class="tool-note">Padronização de processos</div>
-          <div class="dots"><span class="dot on"></span><span class="dot on"></span><span class="dot"></span><span class="dot"></span></div>
-        </div>
-      </div>
-      <div class="tool-item">
-        <div class="tool-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2 6 6 2-6 2-2 6-2-6-6-2 6-2z"></path></svg></div>
-        <div class="tool-info">
-          <div class="tool-name">IA aplicada a processos</div>
-          <div class="tool-note">Redução de tarefas manuais</div>
-          <div class="dots"><span class="dot on"></span><span class="dot on"></span><span class="dot on"></span><span class="dot"></span></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="experiencia">
-    <div class="sec-head">
-      <span class="sec-index">§ 06</span>
-      <span class="sec-title">Experiência profissional</span>
-      <span class="sec-rule"></span>
-    </div>
-
-    <div class="ledger">
-      <div class="entry">
-        <div class="entry-date">Maio 2026 — Atual</div>
-        <div class="entry-title">Assistente Financeiro Júnior</div>
-        <div class="entry-org">Innove Soluções Empresariais — Pinhais, PR</div>
-        <ul>
-          <li>Responsável pelos processos financeiros de contas a pagar e receber, conciliação bancária, fluxo de caixa e emissão de relatórios gerenciais.</li>
-          <li>Otimização de planilhas de controle, com formatação, tabelas dinâmicas e fórmulas alinhadas às regras de negócio.</li>
-          <li>Padronização de processos, reduzindo retrabalho e minimizando erros operacionais.</li>
-          <li>Elaboração de comparativos entre projeção e realizado, apoiando o acompanhamento de desvios.</li>
-          <li>Estruturação de indicadores e relatórios com foco em visão gerencial.</li>
-          <li>Aplicação de ferramentas de IA na melhoria de processos financeiros, reduzindo tarefas manuais.</li>
-        </ul>
-      </div>
-
-      <div class="entry">
-        <div class="entry-date">Set 2024 — Mai 2026 · 1 ano e 9 meses</div>
-        <div class="entry-title">Assistente Financeiro</div>
-        <div class="entry-org">Jandira Alimentos — Brasil</div>
-        <ul>
-          <li>Atuação em análise de crédito e risco, contas a receber, contas a pagar e conciliação bancária.</li>
-          <li>Controle e acompanhamento de fluxo de caixa, análise de inadimplência e cobrança estratégica.</li>
-          <li>Organização e registro de lançamentos contábeis para suporte à tomada de decisão.</li>
-          <li>Elaboração de relatórios gerenciais e apoio em auditorias.</li>
-        </ul>
-      </div>
-
-      <div class="entry">
-        <div class="entry-date">Fev 2024 — Mar 2024 · 2 meses</div>
-        <div class="entry-title">Estagiário de Garantia da Qualidade</div>
-        <div class="entry-org">Inventus Power — Manaus, AM</div>
-        <ul>
-          <li>Testes de confiabilidade elétricos e mecânicos em componentes eletrônicos, conforme especificações técnicas dos clientes.</li>
-          <li>Metalografia (Cross Section) em soldagem de componentes SMT e PTH.</li>
-          <li>Análise de falhas e elaboração de relatórios técnicos, com acompanhamento de auditorias em laboratório.</li>
-        </ul>
-      </div>
-
-      <div class="entry">
-        <div class="entry-date">Jan 2022 — Jan 2023 · 1 ano e 1 mês</div>
-        <div class="entry-title">Assistente Administrativo</div>
-        <div class="entry-org">I3M Engenharia — Manaus, AM</div>
-      </div>
-
-      <div class="entry">
-        <div class="entry-date">Mar 2020 — Mar 2021 · 1 ano e 1 mês</div>
-        <div class="entry-title">Estagiário</div>
-        <div class="entry-org">Instituto Federal do Amazonas (IFAM) — Manaus, AM</div>
-      </div>
-    </div>
-  </section>
-
-  <section id="formacao">
-    <div class="sec-head">
-      <span class="sec-index">§ 07</span>
-      <span class="sec-title">Formação e certificações</span>
-      <span class="sec-rule"></span>
-    </div>
-    <div class="two-col">
-      <div>
-        <div class="card-title">Formação acadêmica</div>
-        <div class="edu-item">
-          <div class="edu-name">Tecnólogo em Gestão Financeira</div>
-          <div class="edu-when">Faculdade Descomplica · Ago 2026 — Ago 2027</div>
-        </div>
-        <div class="edu-item">
-          <div class="edu-name">Técnico em Mecânica — Manutenção Mecânica</div>
-          <div class="edu-when">IFAM · 2018 — 2020</div>
-        </div>
-      </div>
-      <div>
-        <div class="card-title">Certificações</div>
-        <ul class="cert-list">
-          <li><span class="mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M8.5 12.5l2.3 2.3L16 10"></path></svg></span> Regimes Tributários na Prática</li>
-          <li><span class="mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M8.5 12.5l2.3 2.3L16 10"></path></svg></span> Lean Six Sigma — White Belt</li>
-          <li><span class="mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M8.5 12.5l2.3 2.3L16 10"></path></svg></span> Excel do Básico ao Avançado: Excel Extremo</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <footer>
-    <span>© 2026 João Guilherme Trovão da Silva</span>
-    <span><a href="mailto:joao_guilherme2002@outlook.com">joao_guilherme2002@outlook.com</a> · (41) 99854-6728</span>
-  </footer>
-
-</div>
+<div class="toast" id="toast" role="status" aria-live="polite"><svg class="i"><use href="#i-check"/></svg><span id="toastMsg">E-mail copiado</span></div>
 
 <script>
   const root = document.documentElement;
-  const btn = document.getElementById('themeToggle');
-  const label = document.getElementById('toggleLabel');
-  const icon = document.getElementById('toggleIcon');
+  const EMAIL = 'joao_guilherme2002@outlook.com';
 
-  const moonPath = '<path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a7 7 0 0 0 10.5 10.5z"></path>';
-  const sunPaths = document.getElementById('toggleIcon').innerHTML;
-
-  function applyTheme(mode){
-    if(mode === 'dark'){
-      root.classList.add('dark');
-      icon.innerHTML = moonPath;
-      label.textContent = 'Claro';
-    } else {
-      root.classList.remove('dark');
-      icon.innerHTML = sunPaths;
-      label.textContent = 'Escuro';
-    }
+  /* ---- tema ---- */
+  const themeIcon = document.querySelector('#themeIcon use');
+  const themeLabel = document.getElementById('themeLabel');
+  function syncTheme(){
+    const dark = root.classList.contains('dark');
+    themeIcon.setAttribute('href', dark ? '#i-sun' : '#i-moon');
+    themeLabel.textContent = dark ? 'Claro' : 'Escuro';
   }
-
-  let saved = null;
-  try { saved = localStorage.getItem('cv-theme'); } catch(e) {}
-  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-  applyTheme(saved || (prefersDark ? 'dark' : 'light'));
-
-  btn.addEventListener('click', () => {
-    const next = root.classList.contains('dark') ? 'light' : 'dark';
-    applyTheme(next);
-    try { localStorage.setItem('cv-theme', next); } catch(e) {}
-    icon.classList.toggle('spin');
+  syncTheme();
+  document.getElementById('themeToggle').addEventListener('click', () => {
+    root.classList.toggle('dark');
+    try { localStorage.setItem('cv-theme', root.classList.contains('dark') ? 'dark' : 'light'); } catch(e) {}
+    syncTheme();
   });
 
-  /* ---- scroll progress bar ---- */
-  const progressBar = document.getElementById('scrollProgress');
-  function updateProgress(){
-    const h = document.documentElement;
-    const scrolled = h.scrollTop;
-    const max = h.scrollHeight - h.clientHeight;
-    const pct = max > 0 ? (scrolled / max) * 100 : 0;
-    progressBar.style.width = pct + '%';
+  /* ---- toast ---- */
+  const toast = document.getElementById('toast');
+  let toastTimer;
+  function showToast(msg){
+    document.getElementById('toastMsg').textContent = msg;
+    toast.classList.add('show');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => toast.classList.remove('show'), 2200);
   }
-  window.addEventListener('scroll', updateProgress, { passive: true });
-  updateProgress();
 
-  /* ---- button spotlight (cursor-follow) ---- */
-  document.querySelectorAll('.btn, .toggle').forEach(el => {
-    el.addEventListener('mousemove', (e) => {
-      const rect = el.getBoundingClientRect();
-      el.style.setProperty('--mx', (e.clientX - rect.left) + 'px');
-      el.style.setProperty('--my', (e.clientY - rect.top) + 'px');
-    });
+  /* ---- copiar e-mail ---- */
+  document.getElementById('copyEmailBtn').addEventListener('click', async () => {
+    try { await navigator.clipboard.writeText(EMAIL); }
+    catch (e) {
+      const ta = document.createElement('textarea');
+      ta.value = EMAIL; document.body.appendChild(ta); ta.select();
+      try { document.execCommand('copy'); } catch (err) {}
+      document.body.removeChild(ta);
+    }
+    showToast('E-mail copiado: ' + EMAIL);
   });
 
-  /* ---- copy email ---- */
-  const copyBtn = document.getElementById('copyEmailBtn');
-  const copyLabel = document.getElementById('copyEmailLabel');
-  if (copyBtn) {
-    copyBtn.addEventListener('click', async () => {
-      const email = 'joao.guilherme.ts16@gmail.com';
-      try {
-        await navigator.clipboard.writeText(email);
-      } catch (e) {
-        const ta = document.createElement('textarea');
-        ta.value = email;
-        document.body.appendChild(ta);
-        ta.select();
-        try { document.execCommand('copy'); } catch (err) {}
-        document.body.removeChild(ta);
-      }
-      const original = copyLabel.textContent;
-      copyLabel.textContent = 'E-mail copiado ✓';
-      copyBtn.style.opacity = '.85';
-      setTimeout(() => {
-        copyLabel.textContent = original;
-        copyBtn.style.opacity = '';
-      }, 2200);
-    });
-  }
+  /* ---- PDF ---- */
+  document.getElementById('printBtn').addEventListener('click', () => window.print());
 
-  /* ---- radar chart interactivity ---- */
-  (function(){
-    const box = document.querySelector('.radar-box');
-    const tip = document.getElementById('radarTip');
-    const pts = Array.from(document.querySelectorAll('.radar .pt'));
-    const labels = Array.from(document.querySelectorAll('.radar .axis-label'));
-    const spokes = Array.from(document.querySelectorAll('.radar .spoke'));
-    let hideTimer;
-    function activate(i, anchorEl){
-      pts.forEach(p=>p.classList.remove('active'));
-      labels.forEach(l=>l.classList.remove('active'));
-      spokes.forEach(s=>s.classList.remove('active'));
-      pts[i].classList.add('active');
-      labels[i].classList.add('active');
-      if(spokes[i]) spokes[i].classList.add('active');
-      const br = box.getBoundingClientRect();
-      const ar = anchorEl.getBoundingClientRect();
-      tip.style.left = (ar.left + ar.width/2 - br.left) + 'px';
-      tip.style.top = (ar.top - br.top) + 'px';
-      tip.textContent = pts[i].dataset.name + ' · ' + pts[i].dataset.val + '%';
-      tip.classList.add('show');
-    }
-    function deactivate(){
-      pts.forEach(p=>p.classList.remove('active'));
-      labels.forEach(l=>l.classList.remove('active'));
-      spokes.forEach(s=>s.classList.remove('active'));
-      tip.classList.remove('show');
-    }
-    pts.forEach((pt,i)=>{
-      pt.addEventListener('mouseenter', ()=>activate(i, pt));
-      pt.addEventListener('mouseleave', deactivate);
-      pt.addEventListener('touchstart', (e)=>{
-        e.preventDefault();
-        clearTimeout(hideTimer);
-        activate(i, pt);
-        hideTimer = setTimeout(deactivate, 2000);
-      }, {passive:false});
-    });
-    labels.forEach((lb,i)=>{
-      lb.addEventListener('mouseenter', ()=>activate(i, pts[i]));
-      lb.addEventListener('mouseleave', deactivate);
-      lb.addEventListener('touchstart', (e)=>{
-        e.preventDefault();
-        clearTimeout(hideTimer);
-        activate(i, pts[i]);
-        hideTimer = setTimeout(deactivate, 2000);
-      }, {passive:false});
-    });
-    document.addEventListener('touchstart', (e)=>{
-      if(!box.contains(e.target)){ clearTimeout(hideTimer); deactivate(); }
-    }, {passive:true});
-  })();
-
-  /* ---- print / download as PDF ---- */
-  const printBtn = document.getElementById('printBtn');
-  if (printBtn) {
-    printBtn.addEventListener('click', () => window.print());
+  /* ---- navegação ativa conforme a rolagem ---- */
+  const links = Array.from(document.querySelectorAll('.nav a[data-spy]'));
+  const targets = links.map(a => document.getElementById(a.dataset.spy)).filter(Boolean);
+  function spy(){
+    let current = targets[0].id;
+    const line = window.innerHeight * 0.3;
+    targets.forEach(t => { if (t.getBoundingClientRect().top <= line) current = t.id; });
+    if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 4) current = targets[targets.length-1].id;
+    links.forEach(a => a.classList.toggle('active', a.dataset.spy === current));
   }
+  window.addEventListener('scroll', spy, { passive: true });
+  window.addEventListener('resize', spy);
+  spy();
 </script>
-
 </body>
 </html>
